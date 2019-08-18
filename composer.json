@@ -1,0 +1,24 @@
+{
+    "name": "kilyakus/yii2-template-engine",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shen.L",
+            "email": "shen@shenl.com"
+        },
+        {
+            "name": "Edited: Kilyakus",
+            "email": "aleksandr.kilyakov@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "kartik-v/yii2-grid": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "kilyakus\\web\\": ""
+        }
+    }
+}
