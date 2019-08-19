@@ -5,7 +5,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class DateRangePickerAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public static $extraJs = [];
     public $js = [
         'plugins/bootstrap-daterangepicker/moment.min.js',
@@ -25,7 +25,7 @@ class DateRangePickerAsset extends AssetBundle {
         'plugins/bootstrap-datetimepicker/css/datetimepicker.css',
     ];
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
     public function init()
     {

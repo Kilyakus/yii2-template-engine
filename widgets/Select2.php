@@ -4,12 +4,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
-use hustshenl\metronic\bundles\Select2Asset;
+use kilyakus\web\bundles\Select2Asset;
 
 /**
  * Select2 renders Select2 component.

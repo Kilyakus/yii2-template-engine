@@ -6,12 +6,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic;
+namespace kilyakus\web;
 
 use Yii;
 use yii\web\AssetBundle;
 use yii\base\InvalidConfigException;
-use hustshenl\metronic\bundles\ThemeAsset;
+use kilyakus\web\bundles\ThemeAsset;
 
 /**
  * This is the class of Metronic Component
@@ -158,7 +158,7 @@ class Metronic extends \yii\base\Component {
     /**
      * Classes paths
      */
-    const CLASS_HTML = '@vendor/hustshenl/yii2-metronic/helpers/Html.php';
+    const CLASS_HTML = '@vendor/kilyakus/yii2-template-engine/helpers/Html.php';
 
     /**
      * @var string version
@@ -213,7 +213,7 @@ class Metronic extends \yii\base\Component {
     /**
      * @var string Component name used in the application
      */
-    public static $componentName = 'metronic';
+    public static $componentName = 'engine';
 
     /**
      * Inits module
@@ -252,7 +252,7 @@ class Metronic extends \yii\base\Component {
     }
 
     /**
-     * Get base url to metronic assets
+     * Get base url to engine assets
      * @param $view View
      * @return string
      */

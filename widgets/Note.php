@@ -4,12 +4,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 use yii\helpers\Html;
 
 
 /**
- * Note renders a metronic button.
+ * Note renders a engine button.
  *
  * For example,
  * ```php

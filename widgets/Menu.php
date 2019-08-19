@@ -5,9 +5,9 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
-use hustshenl\metronic\Metronic;
+use kilyakus\web\Metronic;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;

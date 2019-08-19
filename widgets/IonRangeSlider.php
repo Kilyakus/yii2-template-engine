@@ -5,13 +5,13 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\View;
-use hustshenl\metronic\bundles\IonRangeSliderAsset;
+use kilyakus\web\bundles\IonRangeSliderAsset;
 
 /**
  *  IonRangeSlider renders ionRangeSlider widget.

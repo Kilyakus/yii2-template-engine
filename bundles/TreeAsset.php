@@ -5,7 +5,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -14,7 +14,7 @@ class TreeAsset extends AssetBundle {
     /**
      * @var string source path
      */
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
 
     /**
      * @var array CSS
@@ -30,7 +30,7 @@ class TreeAsset extends AssetBundle {
      * @var array depends on
      */
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
 
 }

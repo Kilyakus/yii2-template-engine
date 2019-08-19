@@ -5,9 +5,9 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\helpers;
+namespace kilyakus\web\helpers;
 
-use hustshenl\metronic\Metronic;
+use kilyakus\web\Metronic;
 use yii\helpers\Html;
 
 /**

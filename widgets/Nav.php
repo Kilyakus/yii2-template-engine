@@ -4,14 +4,14 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use hustshenl\metronic\Metronic;
+use kilyakus\web\Metronic;
 
 /**
  * Nav renders a nav HTML component.

@@ -7,7 +7,7 @@
  * @version   3.0.1
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\View;
 
@@ -19,13 +19,13 @@ use yii\web\View;
  */
 class ActionColumnAsset extends \kartik\base\AssetBundle
 {
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     /**
      * @var array depended packages
      */
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
-        'hustshenl\metronic\bundles\NotificationAsset',
+        'kilyakus\web\bundles\CoreAsset',
+        'kilyakus\web\bundles\NotificationAsset',
     ];
     public $js = [
         'js/action-column.js',

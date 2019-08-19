@@ -5,20 +5,20 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
- * Link renders a metronic link.
+ * Link renders a engine link.
  *
  * For example,
  *
  * ```php
  * echo Link::widget([
  *     'label' => 'Link',
- *     'url' => 'http://yii2metronic.icron.org/',
+ *     'url' => 'http://yii2engine.icron.org/',
  *     'icon' => 'm-icon-swapright m-icon-gray',
  *     'iconPosition' => Link::ICON_POSITION_LEFT,
  * ]);

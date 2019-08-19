@@ -4,9 +4,9 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
-use hustshenl\metronic\bundles\ActionColumnAsset;
+use kilyakus\web\bundles\ActionColumnAsset;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 

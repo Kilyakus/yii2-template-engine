@@ -4,13 +4,13 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\helpers\Html;
 
 /**
- * ButtonGroup renders a button group metronic component.
+ * ButtonGroup renders a button group engine component.
  *
  * For example,
  *

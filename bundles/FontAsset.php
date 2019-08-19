@@ -4,13 +4,13 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
 class FontAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
 
     public $css = [
         'http://fonts.useso.com/css?family=Open+Sans:400,300,600,700&subset=all',

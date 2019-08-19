@@ -5,15 +5,15 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
-use hustshenl\metronic\Metronic;
+use kilyakus\web\Metronic;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * Portlet renders a metronic portlet.
+ * Portlet renders a engine portlet.
  * Any content enclosed between the [[begin()]] and [[end()]] calls of Portlet
  * is treated as the content of the portlet.
  * For example,
@@ -49,7 +49,7 @@ use yii\helpers\Html;
  * ]);
  * ```
  *
- * @see http://yii2metronic.icron.org/components.html#portlet
+ * @see http://yii2engine.icron.org/components.html#portlet
  * @author icron.org <arbuscula@gmail.com>
  * @since 1.0
  */

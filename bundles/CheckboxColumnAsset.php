@@ -7,7 +7,7 @@
  * @version   3.0.1
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\View;
 
@@ -19,7 +19,7 @@ use yii\web\View;
  */
 class CheckboxColumnAsset extends \kartik\base\AssetBundle
 {
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public $js = [
         'js/grid-checkbox.js',
     ];

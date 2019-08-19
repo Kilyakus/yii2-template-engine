@@ -5,7 +5,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\base\Model;
 use yii\helpers\ArrayHelper;
@@ -74,7 +74,7 @@ class ActiveForm extends \kartik\widgets\ActiveForm
      * @var array the default configuration used by [[field()]] when creating a new field object.
      */
     public $fieldConfig = [];
-    public $fieldClass = 'metronic\widgets\ActiveField';
+    public $fieldClass = 'engine\widgets\ActiveField';
     /**
      * @var bool indicates whether the tag 'form' is rendered.
      * In case 'true' widget renders 'div' instead 'form'.

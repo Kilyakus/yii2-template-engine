@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @package   yii2-metronic
+ * @package   yii2-engine
  * @author    Kartik Visweswaran <kartikv2@gmail.com>
  * @copyright Copyright &copy; Kartik Visweswaran, Krajee.com, 2014 - 2015
  * @version   3.0.1
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
-use hustshenl\metronic\bundles\CheckboxColumnAsset;
+use kilyakus\web\bundles\CheckboxColumnAsset;
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;

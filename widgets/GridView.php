@@ -4,13 +4,13 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
-use hustshenl\metronic\bundles\GridViewAsset;
+use kilyakus\web\bundles\GridViewAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\helpers\ArrayHelper;
-use hustshenl\metronic\bundles\GridViewSortableAsset;
+use kilyakus\web\bundles\GridViewSortableAsset;
 
 class GridView extends \kartik\grid\GridView {
 

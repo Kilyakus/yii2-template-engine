@@ -5,12 +5,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\helpers\Html;
 
 /**
- * Panel renders a metronic panel.
+ * Panel renders a engine panel.
  * Any content enclosed between the [[begin()]] and [[end()]] calls of Panel
  * is treated as the content of the portlet.
  * For example,
@@ -25,7 +25,7 @@ use yii\helpers\Html;
  * Panel::end();
  *
  *
- * @see http://yii2metronic.icron.org/components.html#portlet
+ * @see http://yii2engine.icron.org/components.html#portlet
  * @author icron.org <arbuscula@gmail.com>
  * @since 1.0
  */

@@ -5,7 +5,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class IonRangeSliderAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public $js = [
         'global/plugins/ion.rangeslider/js/ion-rangeSlider/ion.rangeSlider.min.js',
     ];
@@ -23,7 +23,7 @@ class IonRangeSliderAsset extends AssetBundle {
         'global/plugins/ion.rangeslider/css/ion.rangeSlider.Metronic.css',
     ];
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
 
 }

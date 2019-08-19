@@ -4,7 +4,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class TagInputAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public $js = [
         'global/plugins/jquery-tags-input/jquery.tagsinput.min.js',
     ];
@@ -21,7 +21,7 @@ class TagInputAsset extends AssetBundle {
         'global/plugins/jquery-tags-input/jquery.tagsinput.css',
     ];
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
 
 }

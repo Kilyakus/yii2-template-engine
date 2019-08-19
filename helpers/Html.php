@@ -8,7 +8,7 @@
 namespace yii\helpers;
 
 use yii\helpers\ArrayHelper;
-use hustshenl\metronic\bundles\Select2Asset;
+use kilyakus\web\bundles\Select2Asset;
 
 /**
  * Html helper

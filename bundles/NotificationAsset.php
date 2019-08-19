@@ -4,7 +4,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace  hustshenl\metronic\bundles;
+namespace  kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class NotificationAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public $js = [
         'global/plugins/bootstrap-toastr/toastr.min.js',
     ];
@@ -23,6 +23,6 @@ class NotificationAsset extends AssetBundle
     ];
 
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
 }

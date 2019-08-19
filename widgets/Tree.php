@@ -4,11 +4,11 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\helpers\Html;
 use \yii\helpers\ArrayHelper;
-use hustshenl\metronic\bundles\TreeAsset;
+use kilyakus\web\bundles\TreeAsset;
 
 class Tree extends InputWidget {
 
@@ -105,7 +105,7 @@ class Tree extends InputWidget {
      */
     public function run()
     {
-        $builder = \hustshenl\metronic\builders\TreeBuilder::instance($this->items, array(
+        $builder = \kilyakus\web\builders\TreeBuilder::instance($this->items, array(
                 'treeTag' => $this->listTag,
                 'itemTag' => $this->itemTag,
                 'levelAttr' => $this->levelAttr,

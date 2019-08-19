@@ -15,14 +15,14 @@ More than 30 widgets for Yii2 Metronic.
 Basic configuration:
 ```
     'components' => [ 
-        'metronic' => [
-            'class' => 'hustshenl\metronic\Metronic',
+        'engine' => [
+            'class' => 'kilyakus\web\Metronic',
             'color' => 'default',
-            'layoutOption' => \hustshenl\metronic\Metronic::LAYOUT_FLUID,
+            'layoutOption' => \kilyakus\web\Metronic::LAYOUT_FLUID,
             'headerOption' => 'fixed',
         ],
     ],
-    'preload' => ['metronic'],
+    'preload' => ['engine'],
 ```
 
 Some examples:
@@ -205,7 +205,7 @@ DateRangePicker renders dateRangePicker widget.
   ```
 #### Portlet
   
-Portlet renders a metronic portlet.
+Portlet renders a engine portlet.
   Any content enclosed between the [[begin()]] and [[end()]] calls of Portlet
   is treated as the content of the portlet.
   For example,
@@ -329,7 +329,7 @@ Spinner renders an spinner Fuel UX widget.
   ```
 #### Note
   
-Note renders a metronic button.
+Note renders a engine button.
   For example,
   ```php
   Note::widget([

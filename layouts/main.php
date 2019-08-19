@@ -2,15 +2,15 @@
 
 /** @var $this \yii\web\View */
 use yii\helpers\Html;
-use hustshenl\metronic\helpers\Layout;
-use hustshenl\metronic\widgets\Menu;
-use hustshenl\metronic\widgets\NavBar;
-use hustshenl\metronic\widgets\Nav;
-use hustshenl\metronic\widgets\Breadcrumbs;
-use hustshenl\metronic\widgets\Button;
-use hustshenl\metronic\widgets\HorizontalMenu;
-use hustshenl\metronic\Metronic;
-use hustshenl\metronic\widgets\Badge;
+use kilyakus\web\helpers\Layout;
+use kilyakus\web\widgets\Menu;
+use kilyakus\web\widgets\NavBar;
+use kilyakus\web\widgets\Nav;
+use kilyakus\web\widgets\Breadcrumbs;
+use kilyakus\web\widgets\Button;
+use kilyakus\web\widgets\HorizontalMenu;
+use kilyakus\web\Metronic;
+use kilyakus\web\widgets\Badge;
 
 $this->beginPage();
 Metronic::registerThemeAsset($this);
@@ -74,7 +74,7 @@ Metronic::registerThemeAsset($this);
                         [
                             'label' => 'Full Mega menu',
                             'type' => HorizontalMenu::ITEM_TYPE_FULL_MEGA,
-                            'text' => \hustshenl\metronic\widgets\Accordion::widget(
+                            'text' => \kilyakus\web\widgets\Accordion::widget(
                                     [
                                         'items' => [
                                             [
@@ -82,7 +82,7 @@ Metronic::registerThemeAsset($this);
                                                 'content' => 'Content 1...',
                                                 // open its content by default
                                                 'contentOptions' => ['class' => 'in'],
-                                                'type' => \hustshenl\metronic\widgets\Accordion::ITEM_TYPE_SUCCESS,
+                                                'type' => \kilyakus\web\widgets\Accordion::ITEM_TYPE_SUCCESS,
                                             ],
                                             [
                                                 'header' => 'Item 2',

@@ -5,14 +5,14 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * ButtonDropdown renders a group or split button dropdown metronic component.
+ * ButtonDropdown renders a group or split button dropdown engine component.
  *
  * For example,
  *

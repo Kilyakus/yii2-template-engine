@@ -5,14 +5,14 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
- * Button renders a metronic button.
+ * Button renders a engine button.
  *
  * For example,
  *
@@ -65,7 +65,7 @@ class Button extends \yii\bootstrap\Button {
 
     /**
      * @var string The button type.
-     * Valid values for metronic styles are 'default', 'red', 'blue', 'green', 'yellow', 'purple', 'dark'.
+     * Valid values for engine styles are 'default', 'red', 'blue', 'green', 'yellow', 'purple', 'dark'.
      * Valid values for bootstrap styles are 'primary', 'info', 'success', 'warning', 'danger', 'inverse', 'link'.
      */
     public $type = self::TYPE_DEFAULT;

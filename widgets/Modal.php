@@ -5,12 +5,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use hustshenl\metronic\bundles\ModalAsset;
+use kilyakus\web\bundles\ModalAsset;
 
 /**
  * Modal renders a modal window that can be toggled by clicking on a button.

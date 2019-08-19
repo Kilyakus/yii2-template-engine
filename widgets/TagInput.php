@@ -4,14 +4,14 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\helpers\ArrayHelper;
-use hustshenl\metronic\widgets\TextInputWidget;
-use hustshenl\metronic\bundles\TagInputAsset;
+use kilyakus\web\widgets\TextInputWidget;
+use kilyakus\web\bundles\TagInputAsset;
 
 /**
  * TextInputWidget renders text input widget.

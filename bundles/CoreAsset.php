@@ -6,7 +6,7 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
@@ -15,14 +15,14 @@ class CoreAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
 
     /**
      * @var array depended packages
      */
     public $depends = [
         'yii\web\YiiAsset',
-        'hustshenl\metronic\bundles\FontAsset',
+        'kilyakus\web\bundles\FontAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
 
@@ -47,7 +47,7 @@ class CoreAsset extends AssetBundle {
         'global/plugins/jquery.cokie.min.js',
         'global/plugins/uniform/jquery.uniform.min.js',
         'global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
-        'global/scripts/metronic.js',
+        'global/scripts/engine.js',
     ];
 
     /**

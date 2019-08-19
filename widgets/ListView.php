@@ -5,12 +5,12 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\widgets;
+namespace kilyakus\web\widgets;
 
 use yii\helpers\Url;
 use \yii\helpers\ArrayHelper;
-use hustshenl\metronic\bundles\ListViewAsset;
-use hustshenl\metronic\bundles\ListViewSortableAsset;
+use kilyakus\web\bundles\ListViewAsset;
+use kilyakus\web\bundles\ListViewSortableAsset;
 
 class ListView extends \yii\widgets\ListView {
 

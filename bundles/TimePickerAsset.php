@@ -6,13 +6,13 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 
 class TimePickerAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/metronic/assets';
+    public $sourcePath = '@hustshenl/engine/assets';
     public static $extraJs = [];
     public $js = [
         'global/plugins/bootstrap-timepicker/js/bootstrap-timepicker-48.js',
@@ -21,7 +21,7 @@ class TimePickerAsset extends AssetBundle {
         'global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
     ];
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
+        'kilyakus\web\bundles\CoreAsset',
     ];
 
     public function init()

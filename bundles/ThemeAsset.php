@@ -6,24 +6,24 @@
  * @license http://www.shenl.com/license/
  */
 
-namespace hustshenl\metronic\bundles;
+namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
-use hustshenl\metronic\Metronic;
+use kilyakus\web\Metronic;
 
 class ThemeAsset extends AssetBundle {
 
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@hustshenl/metronic/assets/admin/{version}';
+    public $sourcePath = '@hustshenl/engine/assets/admin/{version}';
 
     /**
      * @var array depended bundles
      */
     public $depends = [
-        'hustshenl\metronic\bundles\CoreAsset',
-        'hustshenl\metronic\bundles\StyleBasedAsset',
+        'kilyakus\web\bundles\CoreAsset',
+        'kilyakus\web\bundles\StyleBasedAsset',
     ];
 
     /**
