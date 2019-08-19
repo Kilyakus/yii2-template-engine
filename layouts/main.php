@@ -9,7 +9,7 @@ use kilyakus\web\widgets\Nav;
 use kilyakus\web\widgets\Breadcrumbs;
 use kilyakus\web\widgets\Button;
 use kilyakus\web\widgets\HorizontalMenu;
-use kilyakus\web\Metronic;
+use kilyakus\web\Engine;
 use kilyakus\web\widgets\Badge;
 
 $this->beginPage();

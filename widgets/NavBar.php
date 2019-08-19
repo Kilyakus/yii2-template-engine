@@ -7,7 +7,7 @@
 
 namespace kilyakus\web\widgets;
 
-use kilyakus\web\Metronic;
+use kilyakus\web\Engine;
 use yii\helpers\Html;
 use Yii;
 

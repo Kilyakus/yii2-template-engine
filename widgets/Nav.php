@@ -11,7 +11,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use kilyakus\web\Metronic;
+use kilyakus\web\Engine;
 
 /**
  * Nav renders a nav HTML component.

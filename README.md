@@ -16,9 +16,9 @@ Basic configuration:
 ```
     'components' => [ 
         'engine' => [
-            'class' => 'kilyakus\web\Metronic',
+            'class' => 'kilyakus\web\Engine',
             'color' => 'default',
-            'layoutOption' => \kilyakus\web\Metronic::LAYOUT_FLUID,
+            'layoutOption' => \kilyakus\web\Engine::LAYOUT_FLUID,
             'headerOption' => 'fixed',
         ],
     ],

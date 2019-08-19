@@ -10,7 +10,7 @@ namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
 use yii\helpers\ArrayHelper;
-use kilyakus\web\Metronic;
+use kilyakus\web\Engine;
 
 class StyleBasedAsset extends AssetBundle {
 

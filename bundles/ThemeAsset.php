@@ -9,7 +9,7 @@
 namespace kilyakus\web\bundles;
 
 use yii\web\AssetBundle;
-use kilyakus\web\Metronic;
+use kilyakus\web\Engine;
 
 class ThemeAsset extends AssetBundle {
 
