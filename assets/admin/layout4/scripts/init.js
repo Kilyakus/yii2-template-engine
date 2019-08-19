@@ -1,12 +1,12 @@
 /**
- * Initialization script for Metronic theme
+ * Initialization script for Engine theme
  */
 jQuery(document).ready(function () {
-    Metronic.init(); // init metronic core componets
+    Engine.init(); // init engine core componets
     Layout.init(); // init layout
     App.init();
 });
 
 jQuery('.portlet').ajaxComplete(function (event, xhr, settings) {
-    Metronic.initAjax();
+    Engine.initAjax();
 });

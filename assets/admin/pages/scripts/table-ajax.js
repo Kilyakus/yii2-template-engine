@@ -3,7 +3,7 @@ var TableAjax = function () {
     var initPickers = function () {
         //init date pickers
         $('.date-picker').datepicker({
-            rtl: Metronic.isRTL(),
+            rtl: Engine.isRTL(),
             autoclose: true
         });
     }
@@ -58,7 +58,7 @@ var TableAjax = function () {
                 grid.getDataTable().ajax.reload();
                 grid.clearAjaxParams();
             } else if (action.val() == "") {
-                Metronic.alert({
+                Engine.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'Please select an action',
@@ -66,7 +66,7 @@ var TableAjax = function () {
                     place: 'prepend'
                 });
             } else if (grid.getSelectedRowsCount() === 0) {
-                Metronic.alert({
+                Engine.alert({
                     type: 'danger',
                     icon: 'warning',
                     message: 'No record selected',

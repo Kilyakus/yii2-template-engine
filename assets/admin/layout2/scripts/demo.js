@@ -16,7 +16,7 @@ var Demo = function () {
         $('.page-header-option', panel).val("fixed");
         $('.page-footer-option', panel).val("default");
         if ($('.sidebar-pos-option').attr("disabled") === false) {
-            $('.sidebar-pos-option', panel).val(Metronic.isRTL() ? 'right' : 'left');
+            $('.sidebar-pos-option', panel).val(Engine.isRTL() ? 'right' : 'left');
         }
 
         //handle theme layout
@@ -90,7 +90,7 @@ var Demo = function () {
 
             if (lastSelectedLayout != layoutOption) {
                 //layout changed, run responsive handler: 
-                Metronic.runResizeHandlers();
+                Engine.runResizeHandlers();
             }
             lastSelectedLayout = layoutOption;
 
@@ -152,7 +152,7 @@ var Demo = function () {
             }
 
             //sidebar position
-            if (Metronic.isRTL()) {
+            if (Engine.isRTL()) {
                 if (sidebarPosOption === 'left') {
                     $("body").addClass("page-sidebar-reversed");
                     $('#frontend-link').tooltip('destroy').tooltip({
@@ -184,7 +184,7 @@ var Demo = function () {
 
         // handle theme colors
         var setColor = function (color) {
-            var color_ = (Metronic.isRTL() ? color + '-rtl' : color);
+            var color_ = (Engine.isRTL() ? color + '-rtl' : color);
             $('#style_color').attr("href", Layout.getLayoutCssPath() + 'themes/' + color_ + ".css");
         };
 
@@ -250,9 +250,9 @@ var Demo = function () {
     // handle theme style
     var setThemeStyle = function(style) {
         var file = (style === 'rounded' ? 'components-rounded' : 'components');
-        file = (Metronic.isRTL() ? file + '-rtl' : file);
+        file = (Engine.isRTL() ? file + '-rtl' : file);
 
-        $('#style_components').attr("href", Metronic.getGlobalCssPath() + file + ".css");
+        $('#style_components').attr("href", Engine.getGlobalCssPath() + file + ".css");
 
         if ($.cookie) {
             $.cookie('layout-style-option', style);

@@ -20,7 +20,7 @@ class IonRangeSliderAsset extends AssetBundle {
     ];
     public $css = [
         'global/plugins/ion.rangeslider/css/ion.rangeSlider.css',
-        'global/plugins/ion.rangeslider/css/ion.rangeSlider.Metronic.css',
+        'global/plugins/ion.rangeslider/css/ion.rangeSlider.Engine.css',
     ];
     public $depends = [
         'kilyakus\web\bundles\CoreAsset',

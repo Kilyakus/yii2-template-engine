@@ -13,7 +13,7 @@ use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
 /**
- * Class InputWidget is the base class for all Metronic input widgets.
+ * Class InputWidget is the base class for all Engine input widgets.
  */
 class InputWidget extends Widget
 {

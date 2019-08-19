@@ -16,7 +16,7 @@ use yii\helpers\Url;
 use yii\widgets\ActiveForm as CoreActiveForm;
 
 /**
- * Metronic menu displays a multi-level menu using nested HTML lists.
+ * Engine menu displays a multi-level menu using nested HTML lists.
  *
  * The main property of Menu is [[items]], which specifies the possible items in the menu.
  * A menu item can contain sub-items which specify the sub-menu under that menu item.

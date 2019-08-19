@@ -70,7 +70,7 @@ var Demo = function () {
                 $('.page-prefooter > .container').removeClass("container").addClass('container-fluid');
                 $('.page-footer > .container').removeClass("container").addClass('container-fluid');
 
-                //Metronic.runResizeHandlers();
+                //Engine.runResizeHandlers();
             }
 
             if (headerTopMenuStyle === 'dark') {
@@ -100,7 +100,7 @@ var Demo = function () {
 
         // handle theme colors
         var setColor = function (color) {
-            var color_ = (Metronic.isRTL() ? color + '-rtl' : color);
+            var color_ = (Engine.isRTL() ? color + '-rtl' : color);
             $('#style_color').attr("href", Layout.getLayoutCssPath() + 'themes/' + color_ + ".css");
             $('.page-logo img').attr("src", Layout.getLayoutImgPath() + 'logo-' + color + '.png');
         };
@@ -144,9 +144,9 @@ var Demo = function () {
     // handle theme style
     var setThemeStyle = function(style) {
         var file = (style === 'rounded' ? 'components-rounded' : 'components');
-        file = (Metronic.isRTL() ? file + '-rtl' : file);
+        file = (Engine.isRTL() ? file + '-rtl' : file);
 
-        $('#style_components').attr("href", Metronic.getGlobalCssPath() + file + ".css");
+        $('#style_components').attr("href", Engine.getGlobalCssPath() + file + ".css");
 
         if ($.cookie) {
             $.cookie('layout-style-option', style);

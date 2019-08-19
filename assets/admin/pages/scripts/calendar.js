@@ -20,7 +20,7 @@ var Calendar = function() {
 
             var h = {};
 
-            if (Metronic.isRTL()) {
+            if (Engine.isRTL()) {
                 if ($('#calendar').parents(".portlet").width() <= 720) {
                     $('#calendar').addClass("mobile");
                     h = {
@@ -127,22 +127,22 @@ var Calendar = function() {
                 events: [{
                     title: 'All Day Event',
                     start: new Date(y, m, 1),
-                    backgroundColor: Metronic.getBrandColor('yellow')
+                    backgroundColor: Engine.getBrandColor('yellow')
                 }, {
                     title: 'Long Event',
                     start: new Date(y, m, d - 5),
                     end: new Date(y, m, d - 2),
-                    backgroundColor: Metronic.getBrandColor('green')
+                    backgroundColor: Engine.getBrandColor('green')
                 }, {
                     title: 'Repeating Event',
                     start: new Date(y, m, d - 3, 16, 0),
                     allDay: false,
-                    backgroundColor: Metronic.getBrandColor('red')
+                    backgroundColor: Engine.getBrandColor('red')
                 }, {
                     title: 'Repeating Event',
                     start: new Date(y, m, d + 4, 16, 0),
                     allDay: false,
-                    backgroundColor: Metronic.getBrandColor('green')
+                    backgroundColor: Engine.getBrandColor('green')
                 }, {
                     title: 'Meeting',
                     start: new Date(y, m, d, 10, 30),
@@ -151,19 +151,19 @@ var Calendar = function() {
                     title: 'Lunch',
                     start: new Date(y, m, d, 12, 0),
                     end: new Date(y, m, d, 14, 0),
-                    backgroundColor: Metronic.getBrandColor('grey'),
+                    backgroundColor: Engine.getBrandColor('grey'),
                     allDay: false,
                 }, {
                     title: 'Birthday Party',
                     start: new Date(y, m, d + 1, 19, 0),
                     end: new Date(y, m, d + 1, 22, 30),
-                    backgroundColor: Metronic.getBrandColor('purple'),
+                    backgroundColor: Engine.getBrandColor('purple'),
                     allDay: false,
                 }, {
                     title: 'Click for Google',
                     start: new Date(y, m, 28),
                     end: new Date(y, m, 29),
-                    backgroundColor: Metronic.getBrandColor('yellow'),
+                    backgroundColor: Engine.getBrandColor('yellow'),
                     url: 'http://google.com/',
                 }]
             });

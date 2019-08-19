@@ -1,4 +1,4 @@
-The Yii2Metronic is free software. It is released under the terms of
+The Yii2Engine is free software. It is released under the terms of
 the following BSD License.
 
 Redistribution and use in source and binary forms, with or without
@@ -11,7 +11,7 @@ are met:
    notice, this list of conditions and the following disclaimer in
    the documentation and/or other materials provided with the
    distribution.
- * Neither the name of Yii2Metronic nor the names of its
+ * Neither the name of Yii2Engine nor the names of its
    contributors may be used to endorse or promote products derived
    from this software without specific prior written permission.
 

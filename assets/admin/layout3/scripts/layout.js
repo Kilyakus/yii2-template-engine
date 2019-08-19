@@ -7,7 +7,7 @@ var Layout = function () {
 
     var layoutCssPath = 'admin/layout3/css/';
 
-    var resBreakpointMd = Metronic.getResponsiveBreakpoint('md');
+    var resBreakpointMd = Engine.getResponsiveBreakpoint('md');
 
     //* BEGIN:CORE HANDLERS *//
     // this function handles responsive layout on screen size resize or mobile device rotate.
@@ -46,7 +46,7 @@ var Layout = function () {
 
         // handle menu toggler icon click
         $(".page-header .menu-toggler").on("click", function(event) {
-            if (Metronic.getViewPort().width < resBreakpointMd) {
+            if (Engine.getViewPort().width < resBreakpointMd) {
                 var menu = $(".page-header .page-header-menu");
                 if (menu.hasClass("page-header-menu-opened")) {
                     menu.slideUp(300);
@@ -57,14 +57,14 @@ var Layout = function () {
                 }
 
                 if ($('body').hasClass('page-header-top-fixed')) {
-                    Metronic.scrollTop();
+                    Engine.scrollTop();
                 }
             }
         });
 
         // handle sub dropdown menu click for mobile devices only
         $(".dropdown-submenu > a").on("click", function(e) {
-            if (Metronic.getViewPort().width < resBreakpointMd) {
+            if (Engine.getViewPort().width < resBreakpointMd) {
                 if ($(this).next().hasClass('dropdown-menu')) {
                     e.stopPropagation();
 
@@ -80,7 +80,7 @@ var Layout = function () {
         });
 
         // handle hover dropdown menu for desktop devices only
-        if (Metronic.getViewPort().width >= resBreakpointMd) {
+        if (Engine.getViewPort().width >= resBreakpointMd) {
             $('[data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
                 $(this).dropdownHover(); 
                 $(this).addClass('hover-initialized'); 
@@ -156,7 +156,7 @@ var Layout = function () {
     // Handles main menu on window resize
     var handleMainMenuOnResize = function() {
         // handle hover dropdown menu for desktop devices only
-        var width = Metronic.getViewPort().width;
+        var width = Engine.getViewPort().width;
         var menu = $(".page-header-menu");
             
         if (width >= resBreakpointMd && menu.data('breakpoint') !== 'desktop') { 
@@ -183,8 +183,8 @@ var Layout = function () {
     var handleContentHeight = function() {
         var height;
 
-        if ($('body').height() < Metronic.getViewPort().height) {            
-            height = Metronic.getViewPort().height -
+        if ($('body').height() < Engine.getViewPort().height) {            
+            height = Engine.getViewPort().height -
                 $('.page-header').outerHeight() - 
                 ($('.page-container').outerHeight() - $('.page-content').outerHeight()) -
                 $('.page-prefooter').outerHeight() - 
@@ -234,9 +234,9 @@ var Layout = function () {
         initHeader: function() {
             handleHeader(); // handles horizontal menu    
             handleMainMenu(); // handles menu toggle for mobile
-            Metronic.addResizeHandler(handleMainMenuOnResize); // handle main menu on window resize
+            Engine.addResizeHandler(handleMainMenuOnResize); // handle main menu on window resize
 
-            if (Metronic.isAngularJsApp()) {      
+            if (Engine.isAngularJsApp()) {      
                 handleMainMenuActiveLink('match'); // init sidebar active links 
             }
         },
@@ -262,17 +262,17 @@ var Layout = function () {
         closeMainMenu: function() {
             $('.hor-menu').find('li.open').removeClass('open');
 
-            if (Metronic.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
+            if (Engine.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
                 $('.page-header .menu-toggler').click();
             }
         },
 
         getLayoutImgPath: function() {
-            return Metronic.getAssetsPath() + layoutImgPath;
+            return Engine.getAssetsPath() + layoutImgPath;
         },
 
         getLayoutCssPath: function() {
-            return Metronic.getAssetsPath() + layoutCssPath;
+            return Engine.getAssetsPath() + layoutCssPath;
         }
     };
 

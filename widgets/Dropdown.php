@@ -13,7 +13,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * Dropdown renders a Metronic dropdown menu component.
+ * Dropdown renders a Engine dropdown menu component.
  *
  * For example:
  *

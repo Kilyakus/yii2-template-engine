@@ -325,7 +325,7 @@ Engine::registerThemeAsset($this);
         <!-- BEGIN FOOTER -->
         <div class="footer">
             <div class="footer-inner">
-                <?= date('Y') ?> &copy; YiiMetronic.
+                <?= date('Y') ?> &copy; YiiEngine.
             </div>
             <div class="footer-tools">
                 <span class="go-top">

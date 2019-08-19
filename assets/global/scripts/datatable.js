@@ -14,7 +14,7 @@ var Datatable = function() {
 
     var countSelectedRecords = function() {
         var selected = $('tbody > tr > td:nth-child(1) input[type="checkbox"]:checked', table).size();
-        var text = tableOptions.dataTable.language.metronicGroupActions;
+        var text = tableOptions.dataTable.language.engineGroupActions;
         if (selected > 0) {
             $('.table-group-actions > span', tableWrapper).text(text.replace("_TOTAL_", selected));
         } else {
@@ -44,9 +44,9 @@ var Datatable = function() {
                     "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r><'table-scrollable't><'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>", // datatable layout
                     "pageLength": 10, // default records per page
                     "language": { // language settings
-                        // metronic spesific
-                        "metronicGroupActions": "_TOTAL_ records selected:  ",
-                        "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
+                        // engine spesific
+                        "engineGroupActions": "_TOTAL_ records selected:  ",
+                        "engineAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
 
                         // data tables spesific
                         "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
@@ -83,7 +83,7 @@ var Datatable = function() {
                             $.each(ajaxParams, function(key, value) {
                                 data[key] = value;
                             });
-                            Metronic.blockUI({
+                            Engine.blockUI({
                                 message: tableOptions.loadingMessage,
                                 target: tableContainer,
                                 overlayColor: 'none',
@@ -93,7 +93,7 @@ var Datatable = function() {
                         },
                         "dataSrc": function(res) { // Manipulate the data returned from the server
                             if (res.customActionMessage) {
-                                Metronic.alert({
+                                Engine.alert({
                                     type: (res.customActionStatus == 'OK' ? 'success' : 'danger'),
                                     icon: (res.customActionStatus == 'OK' ? 'check' : 'warning'),
                                     message: res.customActionMessage,
@@ -117,7 +117,7 @@ var Datatable = function() {
                                 tableOptions.onSuccess.call(undefined, the);
                             }
 
-                            Metronic.unblockUI(tableContainer);
+                            Engine.unblockUI(tableContainer);
 
                             return res.data;
                         },
@@ -126,15 +126,15 @@ var Datatable = function() {
                                 tableOptions.onError.call(undefined, the);
                             }
 
-                            Metronic.alert({
+                            Engine.alert({
                                 type: 'danger',
                                 icon: 'warning',
-                                message: tableOptions.dataTable.language.metronicAjaxRequestGeneralError,
+                                message: tableOptions.dataTable.language.engineAjaxRequestGeneralError,
                                 container: tableWrapper,
                                 place: 'prepend'
                             });
 
-                            Metronic.unblockUI(tableContainer);
+                            Engine.unblockUI(tableContainer);
                         }
                     },
 
@@ -143,7 +143,7 @@ var Datatable = function() {
                             tableInitialized = true; // set table initialized
                             table.show(); // display table
                         }
-                        Metronic.initUniform($('input[type="checkbox"]', table)); // reinitialize uniform checkboxes on each table reload
+                        Engine.initUniform($('input[type="checkbox"]', table)); // reinitialize uniform checkboxes on each table reload
                         countSelectedRecords(); // reset selected records indicator
 
                         // callback for ajax data load

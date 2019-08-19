@@ -11,7 +11,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * Accordion renders an accordion Metronic component.
+ * Accordion renders an accordion Engine component.
  *
  * For example:
  *

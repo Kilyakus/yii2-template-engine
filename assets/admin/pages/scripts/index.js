@@ -4,7 +4,7 @@ var Index = function () {
 
         //main function
         init: function () {
-            Metronic.addResizeHandler(function () {
+            Engine.addResizeHandler(function () {
                 jQuery('.vmaps').each(function () {
                     var map = jQuery(this);
                     map.width(map.parent().width());
@@ -114,7 +114,7 @@ var Index = function () {
                 };
             } else {
                 $('#calendar').removeClass("mobile");
-                if (Metronic.isRTL()) {
+                if (Engine.isRTL()) {
                     h = {
                         right: 'title',
                         center: '',
@@ -137,22 +137,22 @@ var Index = function () {
                 events: [{
                     title: 'All Day',
                     start: new Date(y, m, 1),
-                    backgroundColor: Metronic.getBrandColor('yellow')
+                    backgroundColor: Engine.getBrandColor('yellow')
                 }, {
                     title: 'Long Event',
                     start: new Date(y, m, d - 5),
                     end: new Date(y, m, d - 2),
-                    backgroundColor: Metronic.getBrandColor('blue')
+                    backgroundColor: Engine.getBrandColor('blue')
                 }, {
                     title: 'Repeating Event',
                     start: new Date(y, m, d - 3, 16, 0),
                     allDay: false,
-                    backgroundColor: Metronic.getBrandColor('red')
+                    backgroundColor: Engine.getBrandColor('red')
                 }, {
                     title: 'Repeating Event',
                     start: new Date(y, m, d + 6, 16, 0),
                     allDay: false,
-                    backgroundColor: Metronic.getBrandColor('green')
+                    backgroundColor: Engine.getBrandColor('green')
                 }, {
                     title: 'Meeting',
                     start: new Date(y, m, d+9, 10, 30),
@@ -161,19 +161,19 @@ var Index = function () {
                     title: 'Lunch',
                     start: new Date(y, m, d, 14, 0),
                     end: new Date(y, m, d, 14, 0),
-                    backgroundColor: Metronic.getBrandColor('grey'),
+                    backgroundColor: Engine.getBrandColor('grey'),
                     allDay: false
                 }, {
                     title: 'Birthday',
                     start: new Date(y, m, d + 1, 19, 0),
                     end: new Date(y, m, d + 1, 22, 30),
-                    backgroundColor: Metronic.getBrandColor('purple'),
+                    backgroundColor: Engine.getBrandColor('purple'),
                     allDay: false
                 }, {
                     title: 'Click for Google',
                     start: new Date(y, m, 28),
                     end: new Date(y, m, 29),
-                    backgroundColor: Metronic.getBrandColor('yellow'),
+                    backgroundColor: Engine.getBrandColor('yellow'),
                     url: 'http://google.com/'
                 }]
             });
@@ -426,7 +426,7 @@ var Index = function () {
             }
 
             // IE8 Fix: function.bind polyfill
-            if (Metronic.isIE8() && !Function.prototype.bind) {
+            if (Engine.isIE8() && !Function.prototype.bind) {
                 Function.prototype.bind = function (oThis) {
                     if (typeof this !== "function") {
                         // closest thing possible to the ECMAScript 5 internal IsCallable function
@@ -452,21 +452,21 @@ var Index = function () {
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('yellow')
+                barColor: Engine.getBrandColor('yellow')
             });
 
             $('.easy-pie-chart .number.visits').easyPieChart({
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('green')
+                barColor: Engine.getBrandColor('green')
             });
 
             $('.easy-pie-chart .number.bounce').easyPieChart({
                 animate: 1000,
                 size: 75,
                 lineWidth: 3,
-                barColor: Metronic.getBrandColor('red')
+                barColor: Engine.getBrandColor('red')
             });
 
             $('.easy-pie-chart-reload').click(function () {
@@ -557,7 +557,7 @@ var Index = function () {
 
                 var name = $(this).text(); // get clicked user's full name
                 input.val('@' + name + ':'); // set it into the input field
-                Metronic.scrollTo(input); // scroll to input if needed
+                Engine.scrollTo(input); // scroll to input if needed
             });
 
             btn.click(handleClick);
@@ -577,7 +577,7 @@ var Index = function () {
             }
 
             $('#dashboard-report-range').daterangepicker({
-                    opens: (Metronic.isRTL() ? 'right' : 'left'),
+                    opens: (Engine.isRTL() ? 'right' : 'left'),
                     startDate: moment().subtract('days', 29),
                     endDate: moment(),
                     minDate: '01/01/2012',

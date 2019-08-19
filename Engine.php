@@ -14,9 +14,9 @@ use yii\base\InvalidConfigException;
 use kilyakus\web\bundles\ThemeAsset;
 
 /**
- * This is the class of Metronic Component
+ * This is the class of Engine Component
  */
-class Metronic extends \yii\base\Component {
+class Engine extends \yii\base\Component {
 
     /**
      * @var AssetBundle
@@ -224,7 +224,7 @@ class Metronic extends \yii\base\Component {
 
        /* if ($htmlClass != self::CLASS_HTML)
         {
-            throw new InvalidConfigException('Default Yii2 Html helper class is not allowed. For using Metronic theme put Yii::$classMap[\'yii\\helpers\\Html\'] = \'' . self::CLASS_HTML . '\'; into your bootstrap.php');
+            throw new InvalidConfigException('Default Yii2 Html helper class is not allowed. For using Engine theme put Yii::$classMap[\'yii\\helpers\\Html\'] = \'' . self::CLASS_HTML . '\'; into your bootstrap.php');
         }*/
 
         if (self::SIDEBAR_FIXED === $this->sidebarOption && self::SIDEBAR_MENU_HOVER === $this->sidebarMenu)
@@ -244,7 +244,7 @@ class Metronic extends \yii\base\Component {
     }
 
     /**
-     * @return Metronic Get Metronic component
+     * @return Engine Get Engine component
      */
     public static function getComponent()
     {

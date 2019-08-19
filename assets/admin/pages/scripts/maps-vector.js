@@ -50,7 +50,7 @@ var MapsVector = function () {
             setMap("germany");
 
             // redraw maps on window or content resized 
-            Metronic.addResizeHandler(function(){
+            Engine.addResizeHandler(function(){
                 setMap("world");
                 setMap("usa");
                 setMap("europe");

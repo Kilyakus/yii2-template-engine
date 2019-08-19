@@ -10,7 +10,7 @@ use Yii;
 use yii\helpers\Json;
 
 /**
- * This is the base class for Metronic widgets.
+ * This is the base class for Engine widgets.
  *
  * @author icron.org <arbuscula@gmail.com>
  * @since 1.0
@@ -22,15 +22,15 @@ class Widget extends \yii\bootstrap\Widget
      */
     public $options = [];
     /**
-     * @var array the options for the underlying Metronic JS plugin.
-     * Please refer to the corresponding Metronic plugin Web page for possible options.
+     * @var array the options for the underlying Engine JS plugin.
+     * Please refer to the corresponding Engine plugin Web page for possible options.
      * For example, [this page](http://yii2engine.icron.org/javascript.html#portlet) shows
      * how to use the "Portlet" plugin and the supported options (e.g. "loadSuccess").
      */
     public $clientOptions = [];
     /**
-     * @var array the event handlers for the underlying Metronic JS plugin.
-     * Please refer to the corresponding Metronic plugin Web page for possible events.
+     * @var array the event handlers for the underlying Engine JS plugin.
+     * Please refer to the corresponding Engine plugin Web page for possible events.
      * For example, [this page](http://yii2engine.icron.org/javascript.html#portlet) shows
      * how to use the "Portlet" plugin and the supported events (e.g. "close.mr.portlet").
      */

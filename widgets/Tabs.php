@@ -12,7 +12,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 /**
- * Tabs renders a Tab Metronic component.
+ * Tabs renders a Tab Engine component.
  *
  * For example:
  *
@@ -72,7 +72,7 @@ class Tabs extends \yii\bootstrap\Tabs {
     public $placement = self::PLACEMENT_ABOVE;
 
     /**
-     * @var bool Indicates whether tabs is styled for Metronic.
+     * @var bool Indicates whether tabs is styled for Engine.
      */
     public $styled = true;
 
