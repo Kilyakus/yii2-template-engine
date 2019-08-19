@@ -108,7 +108,7 @@ class Menu extends \yii\widgets\Menu {
      */
     public function init()
     {
-        Metronic::registerThemeAsset($this->getView());
+        Engine::registerThemeAsset($this->getView());
 
         $this->_initOptions();
     }
@@ -288,7 +288,7 @@ class Menu extends \yii\widgets\Menu {
     {
         Html::addCssClass($this->options, 'page-sidebar-menu');
 
-        if (Metronic::SIDEBAR_MENU_HOVER === Metronic::getComponent()->sidebarMenu)
+        if (Engine::SIDEBAR_MENU_HOVER === Engine::getComponent()->sidebarMenu)
         {
             Html::addCssClass($this->options, 'page-sidebar-menu-hover-submenu');
         }

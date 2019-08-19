@@ -38,27 +38,27 @@ class Layout {
     {
         Html::addCssClass($options, 'page-sidebar-closed-hide-logo');
 
-        if (Metronic::LAYOUT_BOXED === Metronic::getComponent()->layoutOption)
+        if (Engine::LAYOUT_BOXED === Engine::getComponent()->layoutOption)
         {
             Html::addCssClass($options, 'page-boxed');
         }
 
-        if (Metronic::HEADER_FIXED === Metronic::getComponent()->headerOption)
+        if (Engine::HEADER_FIXED === Engine::getComponent()->headerOption)
         {
             Html::addCssClass($options, 'page-header-fixed');
         }
 
-        if (Metronic::SIDEBAR_POSITION_RIGHT === Metronic::getComponent()->sidebarPosition)
+        if (Engine::SIDEBAR_POSITION_RIGHT === Engine::getComponent()->sidebarPosition)
         {
             Html::addCssClass($options, 'page-sidebar-reversed');
         }
 
-        if (Metronic::SIDEBAR_FIXED === Metronic::getComponent()->sidebarOption)
+        if (Engine::SIDEBAR_FIXED === Engine::getComponent()->sidebarOption)
         {
             Html::addCssClass($options, 'page-sidebar-fixed');
         }
 
-        if (Metronic::FOOTER_FIXED === Metronic::getComponent()->footerOption)
+        if (Engine::FOOTER_FIXED === Engine::getComponent()->footerOption)
         {
             Html::addCssClass($options, 'page-footer-fixed');
         }
@@ -74,7 +74,7 @@ class Layout {
     {
         Html::addCssClass($options, 'page-header navbar');
 
-        if (Metronic::HEADER_FIXED === Metronic::getComponent()->headerOption)
+        if (Engine::HEADER_FIXED === Engine::getComponent()->headerOption)
         {
             Html::addCssClass($options, 'navbar-fixed-top');
         }

@@ -13,7 +13,7 @@ use kilyakus\web\Engine;
 use kilyakus\web\widgets\Badge;
 
 $this->beginPage();
-Metronic::registerThemeAsset($this);
+Engine::registerThemeAsset($this);
 ?>
 <!DOCTYPE html>
 <!--[if IE 8]>
@@ -41,7 +41,7 @@ Metronic::registerThemeAsset($this);
         NavBar::begin(
                 [
                     'brandLabel' => 'My Company',
-                    'brandLogoUrl' => Metronic::getAssetsUrl($this) . '/img/logo.png',
+                    'brandLogoUrl' => Engine::getAssetsUrl($this) . '/img/logo.png',
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => Layout::getHtmlOptions('header', false),
                 ]
@@ -172,7 +172,7 @@ Metronic::registerThemeAsset($this);
                             ]
                         ],
                         [
-                            'label' => Nav::userItem('Bob Nilson', Metronic::getAssetsUrl($this) . '/img/avatar1_small.jpg'),
+                            'label' => Nav::userItem('Bob Nilson', Engine::getAssetsUrl($this) . '/img/avatar1_small.jpg'),
                             'url' => '#',
                             'type' => 'user',
                             'items' => [
@@ -197,7 +197,7 @@ Metronic::registerThemeAsset($this);
         NavBar::end();
         ?>
         <?=
-        (Metronic::getComponent()->layoutOption == Metronic::LAYOUT_BOXED) ?
+        (Engine::getComponent()->layoutOption == Engine::LAYOUT_BOXED) ?
                 Html::beginTag('div', ['class' => 'container']) : '';
         ?>
         <!-- BEGIN CONTAINER -->
@@ -333,7 +333,7 @@ Metronic::registerThemeAsset($this);
                 </span>
             </div>
         </div>
-        <?= (Metronic::getComponent()->layoutOption == Metronic::LAYOUT_BOXED) ? Html::endTag('div') : ''; ?>
+        <?= (Engine::getComponent()->layoutOption == Engine::LAYOUT_BOXED) ? Html::endTag('div') : ''; ?>
         <?php $this->endBody() ?>
     </body>
     <!-- END BODY -->

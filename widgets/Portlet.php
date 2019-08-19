@@ -179,7 +179,7 @@ class Portlet extends Widget {
 
         echo Html::endTag('div'); // End portlet body
         echo Html::endTag('div'); // End portlet div
-        //$loader = Html::img(Metronic::getAssetsUrl($this->view) . '/img/loading-spinner-grey.gif');
+        //$loader = Html::img(Engine::getAssetsUrl($this->view) . '/img/loading-spinner-grey.gif');
         //$this->clientOptions['loader'] = ArrayHelper::getValue($this->clientOptions, 'loader', $loader);
         //$this->registerPlugin('portlet');
     }

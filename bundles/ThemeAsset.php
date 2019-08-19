@@ -61,7 +61,7 @@ class ThemeAsset extends AssetBundle {
      */
     private function _handleSourcePath()
     {
-        Metronic::getComponent()->parseAssetsParams($this->sourcePath);
+        Engine::getComponent()->parseAssetsParams($this->sourcePath);
     }
 
     /**
@@ -69,7 +69,7 @@ class ThemeAsset extends AssetBundle {
      */
     private function _handleDynamicCss()
     {
-        array_walk($this->css, array(Metronic::getComponent(), 'parseAssetsParams'));
+        array_walk($this->css, array(Engine::getComponent(), 'parseAssetsParams'));
     }
 
 }

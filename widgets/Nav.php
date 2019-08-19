@@ -160,7 +160,7 @@ class Nav extends \yii\bootstrap\Nav {
 
             Html::addCssClass($options, 'dropdown-'.$dropdownType);
 
-            if (Metronic::HEADER_DROPDOWN_DARK === Metronic::getComponent()->headerDropdown)
+            if (Engine::HEADER_DROPDOWN_DARK === Engine::getComponent()->headerDropdown)
             {
                 Html::addCssClass($options, 'dropdown-dark');
             }

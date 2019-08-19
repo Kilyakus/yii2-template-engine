@@ -46,10 +46,10 @@ class StyleBasedAsset extends AssetBundle {
      * @var array style based css
      */
     private $styleBasedCss = [
-        Metronic::STYLE_SQUARE => [
+        Engine::STYLE_SQUARE => [
             'global/css/components.css',
         ],
-        Metronic::STYLE_ROUNDED => [
+        Engine::STYLE_ROUNDED => [
             'global/css/components-rounded.css',
         ],
     ];
@@ -69,7 +69,7 @@ class StyleBasedAsset extends AssetBundle {
      */
     private function _handleStyleBased()
     {
-        $this->css = ArrayHelper::merge($this->styleBasedCss[Metronic::getComponent()->style], $this->css);
+        $this->css = ArrayHelper::merge($this->styleBasedCss[Engine::getComponent()->style], $this->css);
     }
 
 }
