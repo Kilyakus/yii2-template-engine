@@ -14,7 +14,7 @@ var Datatable = function() {
 
     var countSelectedRecords = function() {
         var selected = $('tbody > tr > td:nth-child(1) input[type="checkbox"]:checked', table).size();
-        var text = tableOptions.dataTable.language.engineGroupActions;
+        var text = tableOptions.dataTable.language.metronicGroupActions;
         if (selected > 0) {
             $('.table-group-actions > span', tableWrapper).text(text.replace("_TOTAL_", selected));
         } else {
@@ -44,9 +44,9 @@ var Datatable = function() {
                     "dom": "<'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'<'table-group-actions pull-right'>>r><'table-scrollable't><'row'<'col-md-8 col-sm-12'pli><'col-md-4 col-sm-12'>>", // datatable layout
                     "pageLength": 10, // default records per page
                     "language": { // language settings
-                        // engine spesific
-                        "engineGroupActions": "_TOTAL_ records selected:  ",
-                        "engineAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
+                        // metronic spesific
+                        "metronicGroupActions": "_TOTAL_ records selected:  ",
+                        "metronicAjaxRequestGeneralError": "Could not complete request. Please check your internet connection",
 
                         // data tables spesific
                         "lengthMenu": "<span class='seperator'>|</span>View _MENU_ records",
@@ -129,7 +129,7 @@ var Datatable = function() {
                             Engine.alert({
                                 type: 'danger',
                                 icon: 'warning',
-                                message: tableOptions.dataTable.language.engineAjaxRequestGeneralError,
+                                message: tableOptions.dataTable.language.metronicAjaxRequestGeneralError,
                                 container: tableWrapper,
                                 place: 'prepend'
                             });

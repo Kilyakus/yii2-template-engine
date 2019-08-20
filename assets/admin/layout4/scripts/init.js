@@ -2,7 +2,7 @@
  * Initialization script for Engine theme
  */
 jQuery(document).ready(function () {
-    Engine.init(); // init engine core componets
+    Engine.init(); // init metronic core componets
     Layout.init(); // init layout
     App.init();
 });

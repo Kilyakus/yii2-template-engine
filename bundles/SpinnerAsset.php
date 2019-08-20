@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class SpinnerAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public $js = [
         'plugins/fuelux/js/spinner.min.js',
     ];

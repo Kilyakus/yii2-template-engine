@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class NotificationAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public $js = [
         'global/plugins/bootstrap-toastr/toastr.min.js',
     ];

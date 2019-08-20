@@ -10,7 +10,7 @@ Engine has a sleek, clean and intuitive metro style design which makes your next
 friendly. Engine has a huge collection of plugins and UI components and works seamlessly on all major web browsers,
 tablets and phones. 
 
-More than 30 widgets for Yii2.
+More than 30 widgets for Yii2 Engine.
 
 Basic configuration:
 ```

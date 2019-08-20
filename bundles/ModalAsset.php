@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class ModalAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public $js = [
         'global/plugins/bootstrap-modal/js/bootstrap-modalmanager.js',
         'global/plugins/bootstrap-modal/js/bootstrap-modal.js',

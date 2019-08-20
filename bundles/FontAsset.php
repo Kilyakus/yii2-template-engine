@@ -10,7 +10,7 @@ use yii\web\AssetBundle;
 
 class FontAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
 
     public $css = [
         'http://fonts.useso.com/css?family=Open+Sans:400,300,600,700&subset=all',

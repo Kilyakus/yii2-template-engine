@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 
 class TimePickerAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public static $extraJs = [];
     public $js = [
         'global/plugins/bootstrap-timepicker/js/bootstrap-timepicker-48.js',

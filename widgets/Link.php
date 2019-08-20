@@ -59,7 +59,7 @@ class Link extends Widget {
     /**
      * Label options
      */
-    public $labelOptions;
+    public $labelOptions = [];
 
     /**
      * Initializes the widget.
@@ -84,6 +84,7 @@ class Link extends Widget {
     public function run()
     {
         $icon = ($this->icon === null) ? '' : Html::tag('i', '', ['class' => $this->icon]);
+        
         $label = Html::tag('span', Html::encode($this->label), $this->labelOptions);
 
         if (strcasecmp($this->iconPosition, self::ICON_POSITION_LEFT) === 0)

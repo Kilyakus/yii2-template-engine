@@ -118,8 +118,8 @@ class Menu extends \yii\widgets\Menu {
      */
     public function run()
     {
-        echo Html::beginTag('div', ['class' => 'page-sidebar-wrapper']);
-        echo Html::beginTag('div', ['class' => 'page-sidebar navbar-collapse collapse']);
+        echo Html::beginTag('div', ['class' => 'kt-section']);
+        echo Html::beginTag('div', ['class' => 'kt-section__content kt-section__content--fit']);
 
         parent::run();
 
@@ -286,7 +286,7 @@ class Menu extends \yii\widgets\Menu {
      */
     private function _initOptions()
     {
-        Html::addCssClass($this->options, 'page-sidebar-menu');
+        Html::addCssClass($this->options, 'kt-nav kt-nav--v3');
 
         if (Engine::SIDEBAR_MENU_HOVER === Engine::getComponent()->sidebarMenu)
         {

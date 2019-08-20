@@ -16,7 +16,7 @@ class ThemeAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@hustshenl/engine/assets/admin/{version}';
+    public $sourcePath = '@kilyakus/web/assets/admin/{version}';
 
     /**
      * @var array depended bundles

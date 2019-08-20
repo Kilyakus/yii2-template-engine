@@ -15,7 +15,7 @@ class CoreAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
 
     /**
      * @var array depended packages

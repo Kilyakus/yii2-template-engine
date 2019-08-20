@@ -7,6 +7,7 @@
 
 namespace kilyakus\web\helpers;
 
+use Yii;
 use kilyakus\web\Engine;
 use yii\helpers\Html;
 
@@ -27,7 +28,8 @@ class Layout {
 
         $htmlOptions = call_user_func($callback, $options);
 
-        return $asString ? Html::renderTagAttributes($htmlOptions) : $htmlOptions;
+        // return $asString ? Html::renderTagAttributes($htmlOptions) : $htmlOptions;
+        return Html::renderTagAttributes($htmlOptions);
     }
 
     /**
@@ -36,32 +38,32 @@ class Layout {
      */
     private static function _bodyOptions($options)
     {
-        Html::addCssClass($options, 'page-sidebar-closed-hide-logo');
+        Html::addCssClass($options, 'kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-page--loading');
 
-        if (Engine::LAYOUT_BOXED === Engine::getComponent()->layoutOption)
-        {
-            Html::addCssClass($options, 'page-boxed');
-        }
+        // if (Engine::LAYOUT_BOXED === Engine::getComponent()->layoutOption)
+        // {
+        //     Html::addCssClass($options, 'page-boxed');
+        // }
 
         if (Engine::HEADER_FIXED === Engine::getComponent()->headerOption)
         {
-            Html::addCssClass($options, 'page-header-fixed');
+            Html::addCssClass($options, 'kt-header--fixed');
         }
 
-        if (Engine::SIDEBAR_POSITION_RIGHT === Engine::getComponent()->sidebarPosition)
-        {
-            Html::addCssClass($options, 'page-sidebar-reversed');
-        }
-
+        // if (Engine::SIDEBAR_POSITION_RIGHT === Engine::getComponent()->sidebarPosition)
+        // {
+        //     Html::addCssClass($options, 'page-sidebar-reversed');
+        // }
+        
         if (Engine::SIDEBAR_FIXED === Engine::getComponent()->sidebarOption)
         {
-            Html::addCssClass($options, 'page-sidebar-fixed');
+            Html::addCssClass($options, 'kt-aside--fixed');
         }
 
-        if (Engine::FOOTER_FIXED === Engine::getComponent()->footerOption)
-        {
-            Html::addCssClass($options, 'page-footer-fixed');
-        }
+        // if (Engine::FOOTER_FIXED === Engine::getComponent()->footerOption)
+        // {
+        //     Html::addCssClass($options, 'page-footer-fixed');
+        // }
 
         return $options;
     }

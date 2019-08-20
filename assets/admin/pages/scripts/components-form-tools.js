@@ -8,10 +8,10 @@ var ComponentsFormTools = function () {
           datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.num); },
           queryTokenizer: Bloodhound.tokenizers.whitespace,
           local: [
-            { num: 'engine' },
+            { num: 'metronic' },
             { num: 'keenthemes' },
-            { num: 'engine theme' },
-            { num: 'engine template' },
+            { num: 'metronic theme' },
+            { num: 'metronic template' },
             { num: 'keenthemes team' }
           ]
         });
@@ -139,10 +139,10 @@ var ComponentsFormTools = function () {
           datumTokenizer: function(d) { return Bloodhound.tokenizers.whitespace(d.num); },
           queryTokenizer: Bloodhound.tokenizers.whitespace,
           local: [
-            { num: 'engine' },
+            { num: 'metronic' },
             { num: 'keenthemes' },
-            { num: 'engine theme' },
-            { num: 'engine template' },
+            { num: 'metronic theme' },
+            { num: 'metronic template' },
             { num: 'keenthemes team' }
           ]
         });

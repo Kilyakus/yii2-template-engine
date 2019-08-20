@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class DateRangePickerAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public static $extraJs = [];
     public $js = [
         'plugins/bootstrap-daterangepicker/moment.min.js',

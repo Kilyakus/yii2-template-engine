@@ -43,7 +43,7 @@ use kilyakus\web\Engine;
  *
  * Note: Multilevel dropdowns beyond Level 1 are not supported in Bootstrap 3.
  */
-class Nav extends \yii\bootstrap\Nav {
+class NavPage extends \yii\bootstrap\Nav {
 
     /**
      * Positions
@@ -64,7 +64,7 @@ class Nav extends \yii\bootstrap\Nav {
     /**
      * Navbars
      */
-    const NAVBAR_DEFAULT = '';
+    const NAVBAR_DEFAULT = 'nav-pills';
     const NAVBAR_NONE = '';
 
     /**
@@ -114,6 +114,32 @@ class Nav extends \yii\bootstrap\Nav {
         Html::addCssClass($this->options, $this->navbar);
         Html::addCssClass($this->options, $this->position);
         parent::init();
+    }
+
+    /**
+     * Renders the widget.
+     */
+    public function run()
+    {
+        parent::init();
+        return $this->renderItems();
+    }
+
+    /**
+     * Renders widget items.
+     */
+    public function renderItems()
+    {
+        $items = [];
+        foreach ($this->items as $i => $item) {
+            if (isset($item['visible']) && !$item['visible']) {
+                continue;
+            }
+            $items[] = $this->renderItem($item);
+        }
+
+
+        return Html::tag('div', Html::tag('div', Html::tag('ul', implode("\n", $items), $this->options), ['class' => 'kt-subheader__main']), ['class' => 'kt-subheader']);
     }
 
     /**

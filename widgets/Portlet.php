@@ -7,6 +7,7 @@
 
 namespace kilyakus\web\widgets;
 
+use Yii;
 use kilyakus\web\Engine;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
@@ -151,6 +152,15 @@ class Portlet extends Widget {
     public $headerOptions = [];
 
     /**
+     * @var array The HTML attributes for the widget body container
+     */
+    public $footerOptions = [];
+
+    public $footer = [];
+
+    public $footerContent;
+
+    /**
      * Initializes the widget.
      */
     public function init()
@@ -164,10 +174,11 @@ class Portlet extends Widget {
 
         $this->_renderTitle();
 
-        Html::addCssClass($this->bodyOptions, 'portlet-body');
+        $this->_renderScrollerBegin();
+
+        Html::addCssClass($this->bodyOptions, 'kt-portlet__body');
         echo Html::beginTag('div', $this->bodyOptions);
 
-        $this->_renderScrollerBegin();
     }
 
     /**
@@ -178,6 +189,7 @@ class Portlet extends Widget {
         $this->_renderScrollerEnd();
 
         echo Html::endTag('div'); // End portlet body
+        $this->_renderFooter();
         echo Html::endTag('div'); // End portlet div
         //$loader = Html::img(Engine::getAssetsUrl($this->view) . '/img/loading-spinner-grey.gif');
         //$this->clientOptions['loader'] = ArrayHelper::getValue($this->clientOptions, 'loader', $loader);
@@ -189,7 +201,7 @@ class Portlet extends Widget {
      */
     private function _renderTitle()
     {
-        if (false !== $this->title)
+        if ($this->title)
         {
             Html::addCssClass($this->headerOptions, 'kt-portlet__head');
 
@@ -204,7 +216,7 @@ class Portlet extends Widget {
                 echo Html::endTag('span');
             }
 
-            echo Html::tag('span', $this->title, ['class' => $this->pushFontColor('kt-portlet__head-title')]);
+            echo Html::tag('h3', $this->title, ['class' => $this->pushFontColor('kt-portlet__head-title')]);
 
             if ($this->helper)
             {
@@ -229,6 +241,7 @@ class Portlet extends Widget {
         if (!empty($this->tools))
         {
             $tools = [];
+
             foreach ($this->tools as $tool)
             {
                 $class = '';
@@ -246,10 +259,10 @@ class Portlet extends Widget {
                         $class = 'reload';
                         break;
                 }
-                $tools[] = Html::tag('a', '', ['class' => $class, 'href' => '']);
+                $tools[] = Html::tag('a', ($tool['label'] ? $tool['label'] : ''), ['class' => 'btn btn-clean btn-icon-sm '.$class, 'href' => '']);
             }
 
-            echo Html::tag('div', implode("\n", $tools), ['class' => 'tools']);
+            echo Html::tag('div', implode("\n", $tools), ['class' => 'kt-portlet__head-toolbar']);
         }
     }
 
@@ -274,12 +287,23 @@ class Portlet extends Widget {
         {
             if (!isset($this->scroller['height']))
             {
-                throw new InvalidConfigException("The 'height' option of the scroller is required.");
+                Yii::$app->session->setFlash('error', 'Widget' . (new \ReflectionClass(get_class($this)))->getShortName() . ': ' . Yii::t('easyii', 'The "height" option of the scroller is required.'));
             }
             $options = ArrayHelper::getValue($this->scroller, 'options', []);
+
+            $checkFormat = ($this->scroller['format'] ? $this->scroller['format'] : ($this->scroller['format'] = 'px')) == 'px';
+
             echo Html::beginTag(
                     'div', ArrayHelper::merge(
-                            ['class' => 'scroller', 'data-always-visible' => '1', 'data-rail-visible' => '0'], $options, ['style' => 'height:' . $this->scroller['height'] . 'px;']
+                            (
+                                $checkFormat ? [
+                                    'data-scroll' => 'true', 'data-height' => $this->scroller['height'], 'data-mobile-height' => $this->scroller['height']
+                                ] : [
+                                    'data-scroll' => 'true',
+                                ]
+                            ), $options, [
+                                'style' => 'height:' . $this->scroller['height'] . $this->scroller['format'] . ';max-height:' . $this->scroller['max-height'] . $this->scroller['format'] . ';'
+                            ]
                     )
             );
         }
@@ -307,6 +331,36 @@ class Portlet extends Widget {
                 }
                 echo Html::endTag('div');
             }
+        }
+    }
+
+    private function _renderFooter()
+    {
+        if($this->footerContent || $this->footer){
+
+            echo Html::beginTag('div', ['class' => 'kt-portlet__foot']);
+
+            if($this->footerContent){
+
+                echo $this->footerContent;
+
+            }elseif ($this->footer)
+            {
+                
+
+                Html::addCssClass($this->footerOptions, 'align-items-center');
+
+                echo Html::beginTag('div', $this->footerOptions);
+
+                echo Nav::widget([
+                    'encodeLabels' => false,
+                    'items' => $this->footer,
+                ]);
+
+                echo Html::endTag('div');
+            }
+
+            echo Html::endTag('div');
         }
     }
 

@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class MultiSelectAsset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public $js = [
         'plugins/jquery-multi-select/js/jquery.multi-select.js',
     ];

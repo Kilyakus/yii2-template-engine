@@ -12,7 +12,7 @@ use yii\web\AssetBundle;
 class EditableFormAsset extends AssetBundle
 {
 
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public static $extraJs = [];
     public $js = [
         'plugins/jquery.mockjax.js',

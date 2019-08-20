@@ -13,7 +13,7 @@ use yii\web\AssetBundle;
  */
 class Select2Asset extends AssetBundle
 {
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
     public $js = [
         'global/plugins/select2/select2.min.js',
     ];

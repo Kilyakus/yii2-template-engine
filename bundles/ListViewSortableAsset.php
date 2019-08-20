@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class ListViewSortableAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
 
     /**
      * @var array JS

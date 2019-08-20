@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  */
 class GridViewSortableAsset extends AssetBundle {
 
-    public $sourcePath = '@hustshenl/engine/assets';
+    public $sourcePath = '@kilyakus/web/assets';
 
     /**
      * @var array JS
