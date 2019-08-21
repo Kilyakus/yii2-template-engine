@@ -15,14 +15,14 @@ class CoreAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@kilyakus/web/assets';
+    public $sourcePath = '@kilyakus/web/assets/vendors';
 
     /**
      * @var array depended packages
      */
     public $depends = [
         'yii\web\YiiAsset',
-        'kilyakus\web\bundles\FontAsset',
+        'kilyakus\base\BaseAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
 
@@ -30,33 +30,23 @@ class CoreAsset extends AssetBundle {
      * @var array css assets
      */
     public $css = [
-        'global/plugins/simple-line-icons/simple-line-icons.min.css',
-        'global/plugins/uniform/css/uniform.default.css',
-        'global/plugins/bootstrap-switch/css/bootstrap-switch.min.css',
     ];
 
     /**
      * @var array js assets
      */
     public $js = [
-        //'global/plugins/jquery-migrate-1.2.1.min.js',
-        //'global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js',
-        'global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js',
-        'global/plugins/jquery-slimscroll/jquery.slimscroll.min.js',
-        'global/plugins/jquery.blockui.min.js',
-        'global/plugins/jquery.cokie.min.js',
-        'global/plugins/uniform/jquery.uniform.min.js',
-        'global/plugins/bootstrap-switch/js/bootstrap-switch.min.js',
-        'global/scripts/engine.js',
+        'general/js-cookie/src/js.cookie.js',
+        'general/sticky-js/dist/sticky.min.js',
     ];
 
     /**
      * @var array js options
      */
-    public $jsOptions = [
-        'conditions' => [
-            'plugins/respond.min.js' => 'if lt IE 9',
-            'plugins/excanvas.min.js' => 'if lt IE 9',
-        ],
-    ];
+    // public $jsOptions = [
+    //     'conditions' => [
+    //         'plugins/respond.min.js' => 'if lt IE 9',
+    //         'plugins/excanvas.min.js' => 'if lt IE 9',
+    //     ],
+    // ];
 }

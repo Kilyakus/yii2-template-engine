@@ -22,14 +22,15 @@ class Layout {
      * @param boolean $asString if return as string
      * @return type
      */
-    public static function getHtmlOptions($tag, $options = [], $asString = false)
+    public static function getHtmlOptions($tag, $asString = true)
     {
+        $options = [];
+        
         $callback = sprintf('static::_%sOptions', strtolower($tag));
 
         $htmlOptions = call_user_func($callback, $options);
 
-        // return $asString ? Html::renderTagAttributes($htmlOptions) : $htmlOptions;
-        return Html::renderTagAttributes($htmlOptions);
+        return $asString ? Html::renderTagAttributes($htmlOptions) : $htmlOptions;
     }
 
     /**
@@ -54,7 +55,7 @@ class Layout {
         // {
         //     Html::addCssClass($options, 'page-sidebar-reversed');
         // }
-        
+
         if (Engine::SIDEBAR_FIXED === Engine::getComponent()->sidebarOption)
         {
             Html::addCssClass($options, 'kt-aside--fixed');

@@ -35,7 +35,7 @@ class LoginAsset extends AssetBundle {
      * @var array js assets
      */
     public $js = [
-        'global/plugins/jquery-validation/js/jquery.validate.min.js',
+        'vendors/general/jquery-validation/js/jquery.validate.min.js',
         'admin/pages/scripts/login.js',
     ];
 

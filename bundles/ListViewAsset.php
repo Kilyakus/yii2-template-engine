@@ -20,7 +20,7 @@ class GridViewAsset extends AssetBundle {
      * @var array CSS
      */
     public $css = [
-        'global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css',
+        'vendors/general/datatables/plugins/bootstrap/dataTables.bootstrap.css',
     ];
 
 }

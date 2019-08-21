@@ -15,10 +15,10 @@ class TagInputAsset extends AssetBundle {
 
     public $sourcePath = '@kilyakus/web/assets';
     public $js = [
-        'global/plugins/jquery-tags-input/jquery.tagsinput.min.js',
+        'vendors/general/jquery-tags-input/jquery.tagsinput.min.js',
     ];
     public $css = [
-        'global/plugins/jquery-tags-input/jquery.tagsinput.css',
+        'vendors/general/jquery-tags-input/jquery.tagsinput.css',
     ];
     public $depends = [
         'kilyakus\web\bundles\CoreAsset',

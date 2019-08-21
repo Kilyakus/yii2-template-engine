@@ -13,7 +13,6 @@ class FontAsset extends AssetBundle
     public $sourcePath = '@kilyakus/web/assets';
 
     public $css = [
-        'http://fonts.useso.com/css?family=Open+Sans:400,300,600,700&subset=all',
-        'global/plugins/font-awesome/css/font-awesome.min.css',
+        'vendors/general/font-awesome/css/font-awesome.min.css',
     ];
 }

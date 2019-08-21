@@ -15,11 +15,11 @@ class NotificationAsset extends AssetBundle
 {
     public $sourcePath = '@kilyakus/web/assets';
     public $js = [
-        'global/plugins/bootstrap-toastr/toastr.min.js',
+        'vendors/general/bootstrap-toastr/toastr.min.js',
     ];
 
     public $css = [
-        'global/plugins/bootstrap-toastr/toastr.min.css',
+        'vendors/general/bootstrap-toastr/toastr.min.css',
     ];
 
     public $depends = [

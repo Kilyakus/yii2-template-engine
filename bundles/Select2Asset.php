@@ -15,12 +15,12 @@ class Select2Asset extends AssetBundle
 {
     public $sourcePath = '@kilyakus/web/assets';
     public $js = [
-        'global/plugins/select2/select2.min.js',
+        'vendors/general/select2/select2.min.js',
     ];
 
     public $css = [
-        'global/plugins/select2/select2.css',
-        'global/plugins/select2/select2-bootstrap.css',
+        'vendors/general/select2/select2.css',
+        'vendors/general/select2/select2-bootstrap.css',
     ];
 
 

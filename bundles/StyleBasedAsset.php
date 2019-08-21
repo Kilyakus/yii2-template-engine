@@ -30,7 +30,7 @@ class StyleBasedAsset extends AssetBundle {
      * @var array css assets
      */
     public $css = [
-        'global/css/plugins.css',
+        // 'global/css/plugins.css',
     ];
 
     /**
@@ -47,10 +47,10 @@ class StyleBasedAsset extends AssetBundle {
      */
     private $styleBasedCss = [
         Engine::STYLE_SQUARE => [
-            'global/css/components.css',
+            // 'global/css/components.css',
         ],
         Engine::STYLE_ROUNDED => [
-            'global/css/components-rounded.css',
+            // 'global/css/components-rounded.css',
         ],
     ];
 

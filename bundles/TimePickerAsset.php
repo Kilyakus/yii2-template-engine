@@ -15,10 +15,10 @@ class TimePickerAsset extends AssetBundle {
     public $sourcePath = '@kilyakus/web/assets';
     public static $extraJs = [];
     public $js = [
-        'global/plugins/bootstrap-timepicker/js/bootstrap-timepicker-48.js',
+        'vendors/general/bootstrap-timepicker/js/bootstrap-timepicker-48.js',
     ];
     public $css = [
-        'global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+        'vendors/general/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
     ];
     public $depends = [
         'kilyakus\web\bundles\CoreAsset',

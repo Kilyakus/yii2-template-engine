@@ -118,13 +118,7 @@ class Menu extends \yii\widgets\Menu {
      */
     public function run()
     {
-        echo Html::beginTag('div', ['class' => 'kt-section']);
-        echo Html::beginTag('div', ['class' => 'kt-section__content kt-section__content--fit']);
-
         parent::run();
-
-        echo Html::endTag('div');
-        echo Html::endTag('div');
     }
 
     /**

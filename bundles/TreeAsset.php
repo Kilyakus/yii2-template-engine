@@ -20,10 +20,10 @@ class TreeAsset extends AssetBundle {
      * @var array CSS
      */
     public $css = [
-        'global/plugins/jstree/dist/themes/default/style.min.css',
+        'vendors/general/jstree/dist/themes/default/style.min.css',
     ];
     public $js = [  
-        'global/plugins/jstree/dist/jstree.min.js',
+        'vendors/general/jstree/dist/jstree.min.js',
     ];
     
     /**

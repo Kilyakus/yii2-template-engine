@@ -30,18 +30,15 @@ class ThemeAsset extends AssetBundle {
      * @var array css assets
      */
     public $css = [
-        'css/layout.css',
-        'css/themes/{theme}.css',
-        'css/custom.css',
+        'css/style.bundle.css',
+        // 'css/themes/{theme}.css',
     ];
 
     /**
      * @var array js assets
      */
     public $js = [
-        'scripts/layout.js',
-        'scripts/demo.js',
-        'scripts/quick-sidebar.js',
+        'js/scripts.bundle.js',
     ];
 
     /**
