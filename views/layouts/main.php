@@ -13,6 +13,8 @@ use kilyakus\web\widgets\HorizontalMenu;
 use kilyakus\web\Engine;
 use kilyakus\web\widgets\Badge;
 
+\bin\admin\assets\SwitcherAsset::register($this);
+
 $moduleName = $this->context->module->id;
 $module = $this->context->module->module->id;
 if($module == 'app'){

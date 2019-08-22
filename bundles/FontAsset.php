@@ -13,6 +13,6 @@ class FontAsset extends AssetBundle
     public $sourcePath = '@kilyakus/web/assets';
 
     public $css = [
-        'vendors/general/font-awesome/css/font-awesome.min.css',
+        // 'vendors/general/font-awesome/css/font-awesome.min.css',
     ];
 }
