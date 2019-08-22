@@ -85,7 +85,7 @@ Engine::registerThemeAsset($this);
 
                     <?= $this->render('@kilyakus/web/views/elements/header/_header',['baseUrl' => $baseUrl, 'title' => $title]) ?>
 
-                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
+                    <div class="kt-container  kt-container--fluid">
                         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
                             <div class="kt-container kt-container--fit  kt-container--fluid  kt-grid kt-grid--ver">
 
