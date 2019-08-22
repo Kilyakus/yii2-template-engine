@@ -11883,7 +11883,7 @@ body.swal2-height-auto {height:100% !important;}
     .kt-chat .kt-chat__messages.kt-chat__messages--solid .kt-chat__message.kt-chat__message--warning {background:rgba(255, 184, 34, 0.1);}
     .kt-chat .kt-chat__messages.kt-chat__messages--solid .kt-chat__message.kt-chat__message--danger {background:rgba(253, 57, 122, 0.1);}
 
-.kt-chat .kt-chat__input .kt-chat__editor textarea {width:100%;border:0 !important;outline:none !important;background-color:transparent !important;color:#a2a5b9;}
+.kt-chat .kt-chat__input .kt-chat__editor textarea {width:100%;border:0 !important;outline:none !important;background-color:transparent !important;color:#a2a5b9;box-shadow:0 0;padding:0;}
   .kt-chat .kt-chat__input .kt-chat__editor textarea::-moz-placeholder {color:#a2a5b9;opacity:1;}
   .kt-chat .kt-chat__input .kt-chat__editor textarea:-ms-input-placeholder {color:#a2a5b9;}
   .kt-chat .kt-chat__input .kt-chat__editor textarea::-webkit-input-placeholder {color:#a2a5b9;}
