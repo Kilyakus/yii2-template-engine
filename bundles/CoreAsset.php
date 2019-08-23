@@ -23,7 +23,6 @@ class CoreAsset extends AssetBundle {
     public $depends = [
         'yii\web\YiiAsset',
         'kilyakus\base\BaseAsset',
-        'yii\bootstrap\BootstrapPluginAsset',
     ];
 
     /**

@@ -1,25 +1,26 @@
 <?php
-
-/** @var $this \yii\web\View */
 use yii\helpers\Url;
 use yii\helpers\Html;
-use kilyakus\web\helpers\Layout;
-use kilyakus\web\widgets\Menu;
-use kilyakus\web\widgets\NavBar;
-use kilyakus\web\widgets\Nav;
 use kilyakus\web\widgets\Breadcrumbs;
-use kilyakus\web\widgets\Button;
-use kilyakus\web\widgets\HorizontalMenu;
+use bin\admin\components\API;
+use bin\admin\helpers\Image;
+use bin\admin\modules\page\api\Page;
+
 use kilyakus\web\Engine;
-use kilyakus\web\widgets\Badge;
+use kilyakus\web\helpers\Layout;
 
-\bin\admin\assets\SwitcherAsset::register($this);
-
+$baseUrl = Engine::registerThemeAsset($this)->baseUrl;
 $moduleName = $this->context->module->id;
 $module = $this->context->module->module->id;
 if($module == 'app'){
     $module = 'admin';
 }
+
+$page = Page::get('page-admin');
+
+$value = null;
+
+$title = ($page ? ($page->model->attributes['page_id'] ? '' : $page->seo('title',$page->title) . ' ') : '') . $this->title;
 
 if(empty($nav)){
     $nav = [];
@@ -27,7 +28,7 @@ if(empty($nav)){
 if($moduleName == 'forum'){
 }else{
     foreach(Yii::$app->getModule('admin')->activeModules as $key => $activeModule){
-        $activeClass = \bin\admin\components\API::getClass($activeModule->name,'api',$activeModule->name);
+        $activeClass = API::getClass($activeModule->name,'api',$activeModule->name);
         if($moduleName == $activeModule->name){
             $value = Url::toRoute(['/' . $module . '/' . $activeModule->name]);
         }
@@ -44,6 +45,7 @@ if($moduleName == 'forum'){
             ) || (
                 Url::to() == Url::toRoute(['/' . $module . '/' .$activeModule->name])
             );
+            $value = !$url ?: $key; 
             $nav[$key]->children['categories'] = (object)['url' => Url::toRoute(['/' . $module . '/' . $activeModule->name]), 'title' => Yii::t('easyii','Categories'), 'icon' => 'list-alt'];
             foreach($activeClass::cats() as $c => $cat) {
                 if(!$cat->parent){
@@ -55,7 +57,6 @@ if($moduleName == 'forum'){
 }
 
 $this->beginPage();
-Engine::registerThemeAsset($this);
 ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -70,10 +71,8 @@ Engine::registerThemeAsset($this);
     <!-- end::Head -->
     
     <!-- begin::Body -->
-    <body <?= Layout::getHtmlOptions('body') ?> >
+    <body <?= Layout::getHtmlOptions('body') ?> style="background-image: url(<?= Image::blur($page->model->image,1920,1080) ?>)">
         <?php $this->beginBody() ?>
-
-        <?= $this->render('@kilyakus/web/views/elements/header/_header_mobile',['baseUrl' => $baseUrl]) ?>
 
         <!-- begin:: Page -->
 
@@ -85,7 +84,7 @@ Engine::registerThemeAsset($this);
 
                     <?= $this->render('@kilyakus/web/views/elements/header/_header',['baseUrl' => $baseUrl, 'title' => $title]) ?>
 
-                    <div class="kt-container  kt-container--fluid">
+                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
                         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
                             <div class="kt-container kt-container--fit  kt-container--fluid  kt-grid kt-grid--ver">
 

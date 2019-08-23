@@ -11861,6 +11861,7 @@ body.swal2-height-auto {height:100% !important;}
   .kt-chat .kt-chat__head .kt-chat__center {flex-grow:1;text-align:center;}
 
 .kt-chat .kt-chat__messages .kt-chat__message {margin-bottom:1rem;}
+  .kt-chat .kt-chat__messages .kt-chat__message pre {font-family:'Gotham',sans-serif;border:0;white-space:pre-wrap;word-break:break-word;}
   .kt-chat .kt-chat__messages .kt-chat__message .kt-chat__user .kt-chat__username {padding:0 0.4rem;font-size:1.1rem;color:#48465b;font-weight:500;}
     .kt-chat .kt-chat__messages .kt-chat__message .kt-chat__user .kt-chat__username:hover {color:#2986FF;transition:color 0.3s ease;}
   .kt-chat .kt-chat__messages .kt-chat__message .kt-chat__user .kt-chat__datetime {color:#74788d;font-size:0.9rem;font-weight:400;}

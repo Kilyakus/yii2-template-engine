@@ -151,6 +151,8 @@ class Portlet extends Widget {
      */
     public $headerOptions = [];
 
+    public $headerContent;
+
     /**
      * @var array The HTML attributes for the widget body container
      */
@@ -201,7 +203,14 @@ class Portlet extends Widget {
      */
     private function _renderTitle()
     {
-        if ($this->title)
+        if($this->headerContent){
+            Html::addCssClass($this->headerOptions, 'kt-portlet__head');
+
+            echo Html::beginTag('div', $this->headerOptions);
+            echo $this->headerContent;
+            echo Html::endTag('div');
+
+        }elseif ($this->title)
         {
             Html::addCssClass($this->headerOptions, 'kt-portlet__head');
 
