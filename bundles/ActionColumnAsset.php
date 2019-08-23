@@ -19,13 +19,13 @@ use yii\web\View;
  */
 class ActionColumnAsset extends \kartik\base\AssetBundle
 {
-    public $sourcePath = '@kilyakus/web/assets';
+    public $sourcePath = '@kilyakus/web/assets/vendors';
     /**
      * @var array depended packages
      */
     public $depends = [
         'kilyakus\web\bundles\CoreAsset',
-        'kilyakus\web\bundles\NotificationAsset',
+        'kilyakus\toastr\ToastrAsset',
     ];
     public $js = [
         'js/action-column.js',

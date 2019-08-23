@@ -17,7 +17,7 @@ class StyleBasedAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@kilyakus/web/assets';
+    public $sourcePath = '@kilyakus/web/assets/vendors';
 
     /**
      * @var array depended bundles
