@@ -9,8 +9,8 @@ namespace kilyakus\web\widgets;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 
-use kilyakus\select2\Select2;
+use kilyakus\select2\Select2 as Widget;
 
-class Select2 extends Select2
+class Select2 extends Widget
 {
 }
