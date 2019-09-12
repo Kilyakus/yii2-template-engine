@@ -9,6 +9,7 @@ namespace kilyakus\web\widgets;
 
 use Yii;
 use kilyakus\web\Engine;
+use kilyakus\web\bundles\PortletAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -158,9 +159,9 @@ class Portlet extends Widget {
      */
     public $footerOptions = [];
 
-    public $footer = [];
-
     public $footerContent;
+
+    public $footer = [];
 
     /**
      * Initializes the widget.
@@ -172,6 +173,7 @@ class Portlet extends Widget {
         $this->background = $this->background ? 'kt-bg-'.$this->background : '';
 
         Html::addCssClass($this->options, trim(sprintf('kt-portlet kt-portlet--mobile %s %s', $this->type, $this->background)));
+        echo '<!-- begin:: Widgets/Portlet -->';
         echo Html::beginTag('div', $this->options);
 
         $this->_renderTitle();
@@ -193,8 +195,10 @@ class Portlet extends Widget {
         echo Html::endTag('div'); // End portlet body
         $this->_renderFooter();
         echo Html::endTag('div'); // End portlet div
+        echo '<!-- end:: Widgets/Portlet -->';
         //$loader = Html::img(Engine::getAssetsUrl($this->view) . '/img/loading-spinner-grey.gif');
         //$this->clientOptions['loader'] = ArrayHelper::getValue($this->clientOptions, 'loader', $loader);
+        PortletAsset::register($this->view);
         //$this->registerPlugin('portlet');
     }
 
@@ -296,7 +300,7 @@ class Portlet extends Widget {
         {
             if (!isset($this->scroller['height']))
             {
-                Yii::$app->session->setFlash('error', 'Widget' . (new \ReflectionClass(get_class($this)))->getShortName() . ': ' . Yii::t('easyii', 'The "height" option of the scroller is required.'));
+                Yii::$app->session->setFlash('error', 'Widgets/' . (new \ReflectionClass(get_class($this)))->getShortName() . ': ' . Yii::t('easyii', 'The "height" option of the scroller is required.'));
             }
             $options = ArrayHelper::getValue($this->scroller, 'options', []);
 

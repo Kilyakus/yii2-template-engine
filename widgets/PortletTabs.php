@@ -7,6 +7,8 @@
 
 namespace kilyakus\web\widgets;
 
+use Yii;
+use kilyakus\web\bundles\PortletAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -117,6 +119,7 @@ class PortletTabs extends \yii\bootstrap\Tabs {
         echo Html::beginTag('div', ['class' => implode(' ', $classWrap)]);
         echo parent::run();
         echo Html::endTag('div');
+        PortletAsset::register($this->view);
     }
 
     /**
@@ -176,7 +179,7 @@ class PortletTabs extends \yii\bootstrap\Tabs {
             }
             else
             {
-                throw new InvalidConfigException("Either the 'content' or 'items' option must be set.");
+                Yii::$app->session->setFlash('error', 'Widgets/' . (new \ReflectionClass(get_class($this)))->getShortName() . ': ' . 'Either the \'content\' or \'items\' option must be set.');
             }
 
             $headers[] = Html::tag('li', $header, $headerOptions);

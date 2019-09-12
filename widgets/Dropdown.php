@@ -30,12 +30,18 @@ use yii\helpers\Html;
  * ]);
  *
  */
-class Dropdown extends \yii\bootstrap\Dropdown {
+class Dropdown extends \yii\bootstrap\Dropdown
+{
+    public $encodeLabels = false;
 
     /**
      * @var string the dropdown title
      */
     public $title;
+
+    public $button;
+
+    public $buttonOptions = [];
 
     /**
      * @var array the dropdown last item options
@@ -87,10 +93,14 @@ class Dropdown extends \yii\bootstrap\Dropdown {
      */
     protected function renderItems($items, $options = [])
     {
+        echo Html::beginTag('div',['class' => 'dropdown']);
+        if(isset($this->button)){
+            echo Html::button($this->button, ['id' => $this->id, 'data-toggle' => 'dropdown', 'class' => $this->buttonOptions]);
+        }
         $lines = [];
         if ($this->title)
         {
-            $lines[] = Html::tag('li', Html::tag('p', $this->title));
+            $lines[] = Html::tag('li', $this->title, ['class' => 'dropdown-header']);
         }
 
         if (!empty($this->scroller))
@@ -163,8 +173,9 @@ class Dropdown extends \yii\bootstrap\Dropdown {
             }
             $lines[] = Html::tag('li', Html::tag('a', $text . $icon, ['href' => $url]), ['class' => 'external']);
         }
+        echo Html::tag('ul', implode("\n", $lines), array_merge($this->options,['aria-labelledby' => $this->id]));
 
-        return Html::tag('ul', implode("\n", $lines), $this->options);
+        echo Html::endTag('div');
     }
 
 }

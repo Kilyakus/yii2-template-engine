@@ -64,7 +64,7 @@ class Nav extends \yii\bootstrap\Nav {
     /**
      * Navbars
      */
-    const NAVBAR_DEFAULT = '';
+    const NAVBAR_DEFAULT = 'kt-nav';
     const NAVBAR_NONE = '';
 
     /**
@@ -179,7 +179,7 @@ class Nav extends \yii\bootstrap\Nav {
         {
             Html::addCssClass($options, 'active');
         }
-
+        
         return Html::tag('li', sprintf('%s%s', $this->_getLinkTag($item), $this->_getDropdownTag($item)), $options);
     }
 
