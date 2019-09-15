@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @copyright Copyright (c) 2012 - 2015 SHENL.COM
+ * @license http://www.shenl.com/license/
+ */
+
 namespace kilyakus\web\widgets;
 
 use Yii;
@@ -28,6 +34,9 @@ class Dropdown extends \yii\bootstrap\Dropdown
 {
     public $encodeLabels = false;
 
+    /**
+     * @var string the dropdown title
+     */
     public $title;
 
     public $button;
@@ -143,7 +152,7 @@ class Dropdown extends \yii\bootstrap\Dropdown
             $options = ArrayHelper::getValue($item, 'options', []);
             $linkOptions = ArrayHelper::getValue($item, 'linkOptions', []);
             $linkOptions['tabindex'] = '-1';
-            $content = Html::a($label, ArrayHelper::getValue($item, 'url', '#'), $linkOptions);
+            $content = Html::a($label, ArrayHelper::getValue($item, 'url', 'javascript://'), $linkOptions);
             $lines[] = Html::tag('li', $content, $options);
         }
 
@@ -155,7 +164,7 @@ class Dropdown extends \yii\bootstrap\Dropdown
 
         if (!empty($this->more))
         {
-            $url = ArrayHelper::getValue($this->more, 'url', '#');
+            $url = ArrayHelper::getValue($this->more, 'url', 'javascript://');
             $text = ArrayHelper::getValue($this->more, 'label', '');
             $icon = ArrayHelper::getValue($this->more, 'icon', '');
             if ($icon)
