@@ -93,8 +93,8 @@ class Dropdown extends \yii\bootstrap\Dropdown
      */
     protected function renderItems($items, $options = [])
     {
-        echo Html::beginTag('div',['class' => 'dropdown']);
         if(isset($this->button)){
+            echo Html::beginTag('div',['class' => 'dropdown']);
             echo Html::button($this->button, ['id' => $this->id, 'data-toggle' => 'dropdown', 'class' => $this->buttonOptions]);
         }
         $lines = [];
@@ -175,7 +175,9 @@ class Dropdown extends \yii\bootstrap\Dropdown
         }
         echo Html::tag('ul', implode("\n", $lines), array_merge($this->options,['aria-labelledby' => $this->id]));
 
-        echo Html::endTag('div');
+        if(isset($this->button)){
+            echo Html::endTag('div');
+        }
     }
 
 }
