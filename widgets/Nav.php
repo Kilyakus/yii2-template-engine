@@ -129,7 +129,7 @@ class Nav extends \yii\bootstrap\Nav {
             return $item;
         }
 
-        if (in_array(self::ITEM_DIVIDER, $item, true))
+        if (array_key_exists(self::ITEM_DIVIDER, $item))
         {
             return Html::tag('li', '', ['class' => self::ITEM_DIVIDER]);
         }
