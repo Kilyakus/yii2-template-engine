@@ -3802,7 +3802,7 @@ code {background-color:#f7f8fa;padding:0.15rem 0.25rem;border-radius:4px;}
 
 .form-control:focus, .form-control:active {box-shadow:none !important;}
 
-.form-control[readonly] {background-color:#ffffff;}
+.form-control[readonly] {background-color:#e2e5ec;}
 
 .form-control.form-control-pill {border-radius:50px;}
 
