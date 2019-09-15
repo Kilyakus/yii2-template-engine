@@ -15,6 +15,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "kilyakus/yii2-base": "*",
+        "kilyakus/yii2-widget-button": "*",
         "kilyakus/yii2-widget-select2": "*",
         "kilyakus/yii2-widget-depdrop": "*",
         "kartik-v/yii2-grid": "*"

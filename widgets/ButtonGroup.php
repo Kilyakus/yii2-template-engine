@@ -40,6 +40,8 @@ class ButtonGroup extends \yii\bootstrap\ButtonGroup
      */
     public $stacked = false;
 
+    public $vertical = false;
+
     /**
      * Initializes the widget.
      */
