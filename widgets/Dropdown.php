@@ -1,10 +1,4 @@
 <?php
-
-/**
- * @copyright Copyright (c) 2012 - 2015 SHENL.COM
- * @license http://www.shenl.com/license/
- */
-
 namespace kilyakus\web\widgets;
 
 use Yii;
@@ -34,9 +28,6 @@ class Dropdown extends \yii\bootstrap\Dropdown
 {
     public $encodeLabels = false;
 
-    /**
-     * @var string the dropdown title
-     */
     public $title;
 
     public $button;
@@ -131,7 +122,7 @@ class Dropdown extends \yii\bootstrap\Dropdown
                 continue;
             }
 
-            if (in_array('divider', $item))
+            if (array_key_exists('divider', $item))
             {
                 $lines[] = Html::tag('li', '', ['class' => 'divider']);
                 continue;
