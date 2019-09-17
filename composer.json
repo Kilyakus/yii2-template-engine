@@ -16,6 +16,7 @@
         "yiisoft/yii2": "*",
         "kilyakus/yii2-base": "*",
         "kilyakus/yii2-widget-button": "*",
+        "kilyakus/yii2-widget-cutter": "*",
         "kilyakus/yii2-widget-depdrop": "*",
         "kilyakus/yii2-widget-portlet": "*",
         "kilyakus/yii2-widget-select2": "*",
