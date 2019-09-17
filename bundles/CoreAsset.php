@@ -15,7 +15,7 @@ class CoreAsset extends AssetBundle {
     /**
      * @var string source assets path
      */
-    public $sourcePath = '@kilyakus/web/assets/vendors';
+    public $sourcePath = '@kilyakus/web/assets/vendors/general';
 
     /**
      * @var array depended packages
@@ -35,8 +35,8 @@ class CoreAsset extends AssetBundle {
      * @var array js assets
      */
     public $js = [
-        'general/js-cookie/src/js.cookie.js',
-        'general/sticky-js/dist/sticky.min.js',
+        'js-cookie/src/js.cookie.js',
+        'sticky-js/dist/sticky.min.js',
     ];
 
     /**

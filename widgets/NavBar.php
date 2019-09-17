@@ -7,9 +7,10 @@
 
 namespace kilyakus\web\widgets;
 
-use kilyakus\web\Engine;
-use yii\helpers\Html;
 use Yii;
+use yii\helpers\Html;
+use kilyakus\web\Engine;
+use kilyakus\web\bundles\NavBarAsset;
 
 /**
  * NavBar renders a navbar HTML component.
@@ -76,6 +77,8 @@ class NavBar extends \yii\bootstrap\NavBar {
     {
         echo Html::endTag('div');
         echo Html::endTag('div');
+        
+        NavBarAsset::register($view);
     }
 
     /**
