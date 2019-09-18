@@ -1,34 +1,40 @@
 <?php
-
-/**
- * @copyright Copyright (c) 2012 - 2015 SHENL.COM
- * @license http://www.shenl.com/license/
- */
-
 namespace kilyakus\web\widgets;
 
 use Yii;
 use yii\base\InvalidConfigException;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use kilyakus\button\Button;
 
-/**
- * Dropdown renders a Engine dropdown menu component.
- *
- * For example:
- *
- * Dropdown::widget([
- *    'title' => 'Dropdown title',
- *    'more' => ['label' => 'xxx', 'url' => '/', 'icon' => 'm-icon-swapright'],
- *    'scroller' => ['height' => 200],
- *    'items' => [
- *        ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
- *        '<li class="divider"></li>',
- *        '<li class="dropdown-header">Dropdown Header</li>',
- *        ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
- *     ],
- * ]);
- *
+/*
+
+    For example:
+    
+    Dropdown::widget([
+        'button' => [
+            'icon' => 'fa fa-cog',
+            'iconPosition' => Widget\Button::ICON_POSITION_LEFT,
+            'type' => Widget\Button::TYPE_PRIMARY,
+            'size' => Widget\Button::SIZE_MINI,
+            'disabled' => false,
+            'block' => false,
+            'outline' => true,
+            'hover' => true,
+            'circle' => true,
+            'options' => ['title' => Yii::t('easyii', 'Actions')]
+        ],
+       'title' => 'Dropdown title',
+       'more' => ['label' => 'xxx', 'url' => '/', 'icon' => 'm-icon-swapright'],
+       'scroller' => ['height' => 200],
+       'items' => [
+           ['label' => 'Level 1 - Dropdown A', 'url' => '#'],
+           '<li class="divider"></li>',
+           '<li class="dropdown-header">Dropdown Header</li>',
+           ['label' => 'Level 1 - Dropdown B', 'url' => '#'],
+        ],
+    ]);
+    
  */
 class Dropdown extends \yii\bootstrap\Dropdown
 {
@@ -40,8 +46,6 @@ class Dropdown extends \yii\bootstrap\Dropdown
     public $title;
 
     public $button;
-
-    public $buttonOptions = [];
 
     /**
      * @var array the dropdown last item options
@@ -95,7 +99,8 @@ class Dropdown extends \yii\bootstrap\Dropdown
     {
         if(isset($this->button)){
             echo Html::beginTag('div',['class' => 'dropdown']);
-            echo Html::button($this->button, ['id' => $this->id, 'data-toggle' => 'dropdown', 'class' => $this->buttonOptions]);
+            $this->button['options'] = ArrayHelper::merge($this->button['options'],['id' => $this->id, 'data-toggle' => 'dropdown']);
+            echo Button::widget($this->button);
         }
         $lines = [];
         if ($this->title)
