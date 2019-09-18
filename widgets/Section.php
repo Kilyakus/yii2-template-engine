@@ -2,11 +2,10 @@
 namespace kilyakus\web\widgets;
 
 use Yii;
-use kilyakus\web\Engine;
-use kilyakus\web\bundles\PortletAsset;
 use yii\base\InvalidConfigException;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use yii\helpers\ArrayHelper;
+use kilyakus\portlet\PortletAsset;
 
 /**
  * Portlet renders a engine portlet.
@@ -109,8 +108,6 @@ class Section extends Widget {
         echo Html::endTag('div'); // End section body
         echo Html::endTag('div'); // End section div
         echo '<!-- end:: Widgets/Section -->';
-        //$loader = Html::img(Engine::getAssetsUrl($this->view) . '/img/loading-spinner-grey.gif');
-        //$this->clientOptions['loader'] = ArrayHelper::getValue($this->clientOptions, 'loader', $loader);
         PortletAsset::register($this->view);
         //$this->registerPlugin('section');
     }
