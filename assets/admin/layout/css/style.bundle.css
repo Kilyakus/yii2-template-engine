@@ -10133,7 +10133,7 @@ body.swal2-height-auto {height:100% !important;}
       .kt-iconbox--animate-faster:after {-webkit-animation:wave 5s infinite linear;animation:wave 5s infinite linear;}
   .kt-iconbox--brand .kt-iconbox__body .kt-iconbox__icon svg g [fill] {fill:#2986FF !important;}
   .kt-iconbox--brand.kt-iconbox--animate, .kt-iconbox--brand.kt-iconbox--animate-slow, .kt-iconbox--brand.kt-iconbox--animate-slower, .kt-iconbox--brand.kt-iconbox--animate-fast, .kt-iconbox--brand.kt-iconbox--animate-faster {background-color:rgba(113, 106, 202, 0.07) !important;}
-  .kt-iconbox--light .kt-iconbox__body .kt-iconbox__icon svg g [fill] {fill:#ffffff !important;}
+  .kt-iconbox--light .kt-iconbox__body .kt-iconbox__icon svg g [fill] {fill:#282a3c !important;}
   .kt-iconbox--light.kt-iconbox--animate, .kt-iconbox--light.kt-iconbox--animate-slow, .kt-iconbox--light.kt-iconbox--animate-slower, .kt-iconbox--light.kt-iconbox--animate-fast, .kt-iconbox--light.kt-iconbox--animate-faster {background-color:rgba(255, 255, 255, 0.07) !important;}
   .kt-iconbox--dark .kt-iconbox__body .kt-iconbox__icon svg g [fill] {fill:#282a3c !important;}
   .kt-iconbox--dark.kt-iconbox--animate, .kt-iconbox--dark.kt-iconbox--animate-slow, .kt-iconbox--dark.kt-iconbox--animate-slower, .kt-iconbox--dark.kt-iconbox--animate-fast, .kt-iconbox--dark.kt-iconbox--animate-faster {background-color:rgba(40, 42, 60, 0.07) !important;}
