@@ -10,7 +10,7 @@
     width: 100%;
     max-width: 50px;
     height: 50px; }
-  .kt-media span {
+  .kt-media > * {
     width: 50px;
     height: 50px;
     font-size: 1.3rem; }
@@ -26,7 +26,7 @@
     display: -ms-flexbox;
     display: flex;
     border-radius: 4px; }
-  .kt-media span {
+  .kt-media > * {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -41,35 +41,35 @@
     border-radius: 4px; }
   .kt-media.kt-media--default {
     background-color: #ebedf2; }
-  .kt-media.kt-media--brand span {
+  .kt-media.kt-media--brand > * {
     background: rgba(113, 106, 202, 0.1);
     color: #716aca; }
-  .kt-media.kt-media--light span {
+  .kt-media.kt-media--light > * {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff; }
-  .kt-media.kt-media--dark span {
+  .kt-media.kt-media--dark > * {
     background: rgba(40, 42, 60, 0.1);
     color: #282a3c; }
-  .kt-media.kt-media--primary span {
+  .kt-media.kt-media--primary > * {
     background: rgba(88, 103, 221, 0.1);
     color: #5867dd; }
-  .kt-media.kt-media--success span {
+  .kt-media.kt-media--success > * {
     background: rgba(29, 201, 183, 0.1);
     color: #1dc9b7; }
-  .kt-media.kt-media--info span {
+  .kt-media.kt-media--info > * {
     background: rgba(85, 120, 235, 0.1);
     color: #5578eb; }
-  .kt-media.kt-media--warning span {
+  .kt-media.kt-media--warning > * {
     background: rgba(255, 184, 34, 0.1);
     color: #ffb822; }
-  .kt-media.kt-media--danger span {
+  .kt-media.kt-media--danger > * {
     background: rgba(253, 57, 122, 0.1);
     color: #fd397a; }
   .kt-media.kt-media--xs img {
     width: 100%;
     max-width: 24px;
     height: 24px; }
-  .kt-media.kt-media--xs span {
+  .kt-media.kt-media--xs > * {
     width: 24px;
     height: 24px;
     font-size: 0.8rem; }
@@ -84,7 +84,7 @@
     width: 100%;
     max-width: 30px;
     height: 30px; }
-  .kt-media.kt-media--sm span {
+  .kt-media.kt-media--sm > * {
     width: 30px;
     height: 30px;
     font-size: 0.9rem; }
@@ -99,7 +99,7 @@
     width: 100%;
     max-width: 47px;
     height: 47px; }
-  .kt-media.kt-media--md span {
+  .kt-media.kt-media--md > * {
     width: 47px;
     height: 47px;
     font-size: 1rem; }
@@ -114,7 +114,7 @@
     width: 100%;
     max-width: 65px;
     height: 65px; }
-  .kt-media.kt-media--lg span {
+  .kt-media.kt-media--lg > * {
     width: 65px;
     height: 65px;
     font-size: 1.3rem; }
@@ -129,7 +129,7 @@
     width: 100%;
     max-width: 80px;
     height: 80px; }
-  .kt-media.kt-media--xl span {
+  .kt-media.kt-media--xl > * {
     width: 80px;
     height: 80px;
     font-size: 1.7rem; }
@@ -144,7 +144,7 @@
     border-radius: 50%; }
     .kt-media.kt-media--circle img {
       border-radius: 50%; }
-    .kt-media.kt-media--circle span {
+    .kt-media.kt-media--circle > * {
       border-radius: 50%; }
 
 .kt-media-card {

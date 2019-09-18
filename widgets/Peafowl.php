@@ -71,12 +71,12 @@ class Peafowl extends \yii\bootstrap\Widget
         if (!isset($item['label'])) {
             throw new InvalidConfigException("The 'label' option is required.");
         }
-        $label = $item['image'] ? Html::img($item['image']) : $item['label'];
+        $label = $item['image'] ? Html::img($item['image'], ['style' => 'background:#ebedf2;']) : $item['label'];
         $options = ArrayHelper::getValue($item, 'options', []);
         $options = ArrayHelper::merge($options,['data-toggle' => 'kt-tooltip', 'data-skin' => 'dark', 'data-placement' => 'top', 'data-original-title' => $item['label']]);
         $url = ArrayHelper::getValue($item, 'url', 'javascript://');
 
-        Html::addCssClass($options, 'kt-media kt-media--sm kt-media--circle');
+        Html::addCssClass($options, 'kt-media kt-media--sm kt-media--circle kt-media--dark');
         if($url != 'javascript://'){
             $options['target'] = '_blank';
         }
