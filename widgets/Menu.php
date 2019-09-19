@@ -8,6 +8,7 @@
 namespace kilyakus\web\widgets;
 
 use kilyakus\web\Engine;
+use kilyakus\nav\NavAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
@@ -109,6 +110,8 @@ class Menu extends \yii\widgets\Menu {
     public function init()
     {
         Engine::registerThemeAsset($this->getView());
+
+        NavAsset::register($this->getView());
 
         $this->_initOptions();
     }
