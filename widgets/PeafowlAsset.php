@@ -1,7 +1,7 @@
 <?php
 namespace kilyakus\web\widgets;
 
-class Peafowl extends \kilyakus\widgets\AssetBundle
+class PeafowlAsset extends \kilyakus\widgets\AssetBundle
 {
     public function init()
     {

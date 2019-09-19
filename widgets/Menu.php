@@ -110,7 +110,7 @@ class Menu extends \yii\widgets\Menu {
     public function init()
     {
         Engine::registerThemeAsset($this->getView());
-
+        
         NavAsset::register($this->getView());
 
         $this->_initOptions();
