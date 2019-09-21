@@ -22,11 +22,10 @@ use yii\helpers\Html;
 			<?php endif; ?>
 			<?php if(IS_ROOT) : ?>
 				<li class="kt-menu__item " aria-haspopup="true">
-					<a href="<?= Url::toRoute(['/admin/settings']) ?>" class="kt-menu__link "><span class="kt-menu__link-text"><i class="fa fa-cog"></i>&nbsp;<?= Yii::t('easyii', 'Settings') ?></span></a>
+					<a href="<?= Url::toRoute(['/system/default']) ?>" class="kt-menu__link "><span class="kt-menu__link-text"><i class="fa fa-cog"></i>&nbsp;<?= Yii::t('easyii', 'Settings') ?></span></a>
 				</li>
 			<?php endif; ?>
 		</ul>
 	</div>
 </div>
-
 <!-- end: Header Menu -->
