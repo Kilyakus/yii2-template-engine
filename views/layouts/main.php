@@ -82,7 +82,7 @@ $this->beginPage();
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
-                    <?= $this->render('@kilyakus/web/views/elements/header/_header',['baseUrl' => $baseUrl, 'title' => $title]) ?>
+                    <?= \kilyakus\web\templates\Header\Header::widget(['pluginOptions' => ['adminPanel' => true]]) ?>
 
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
                         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
