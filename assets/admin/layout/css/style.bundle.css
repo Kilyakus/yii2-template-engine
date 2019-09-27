@@ -247,8 +247,11 @@ pre {display:block;font-size:87.5%;color:#212529;}
 .pre-scrollable {max-height:340px;overflow-y:scroll;}
 
 .container {width:100%;padding-right:10px;padding-left:10px;margin-right:auto;margin-left:auto;}
-  @media (min-width:576px) {
+@media (min-width:576px) {
   .container {max-width:540px;}
+}
+@media (min-width:640px) {
+  .container {max-width:620px;}
 }
   @media (min-width:768px) {
   .container {max-width:720px;}

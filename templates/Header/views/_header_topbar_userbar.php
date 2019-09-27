@@ -6,10 +6,10 @@ use kilyakus\web\widgets as Widget;
 <!--begin: User bar -->
 <?php if(Yii::$app->user->isGuest) : ?>
 	<?= Widget\Button::widget([
-	    'title' => Yii::t('easyii','Login'),
-	    'type' => 'transparent',
-	    'size' => Widget\Button::SIZE_LARGE,
-	    'options' => ['class' => 'ml-2', 'data-toggle' => 'modal', 'data-target' => '#loginForm'],
+		'title' => Yii::t('easyii','Login'),
+		'type' => 'transparent',
+		'size' => Widget\Button::SIZE_LARGE,
+		'options' => ['class' => 'ml-2', 'data-toggle' => 'modal', 'data-target' => '#loginForm'],
 	]) ?>
 <?php else: ?>
 	<div class="kt-header__topbar-item kt-header__topbar-item--user">
@@ -43,7 +43,7 @@ use kilyakus\web\widgets as Widget;
 
 			<!--begin: Navigation -->
 			<div class="kt-notification">
-				<a href="<?= Url::toRoute(['/admin/user/info','id' => Yii::$app->user->id]) ?>" class="kt-notification__item">
+				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user' : '/admin/user/info'),'id' => Yii::$app->user->id]) ?>" class="kt-notification__item">
 					<div class="kt-notification__item-icon">
 						<i class="flaticon2-calendar-3 kt-font-success"></i>
 					</div>
@@ -56,7 +56,7 @@ use kilyakus\web\widgets as Widget;
 						</div>
 					</div>
 				</a>
-				<a href="<?= Url::toRoute(['/admin/chat/message/chat']) ?>" class="kt-notification__item">
+				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user/connection/chat' : '/admin/chat/message/chat')]) ?>" class="kt-notification__item">
 					<div class="kt-notification__item-icon">
 						<i class="flaticon2-mail kt-font-warning"></i>
 					</div>
@@ -71,19 +71,19 @@ use kilyakus\web\widgets as Widget;
 				</a>
 				<div class="kt-notification__custom kt-space-between">
 					<?= Widget\Button::widget([
-	                    'tagName' => 'a',
-	                    'title' => Yii::t('easyii','Logout'),
-	                    'type' => Widget\Button::TYPE_BRAND,
-	                    'size' => Widget\Button::SIZE_SMALL,
-	                    'disabled' => false,
-	                    'block' => false,
-	                    'outline' => false,
-	                    'hover' => false,
-	                    'circle' => false,
-	                    'label' => true,
-	                    'upper' => false,
-	                    'options' => ['href' => Url::toRoute(['/site/out'])],
-	                ]) ?>
+						'tagName' => 'a',
+						'title' => Yii::t('easyii','Logout'),
+						'type' => Widget\Button::TYPE_BRAND,
+						'size' => Widget\Button::SIZE_SMALL,
+						'disabled' => false,
+						'block' => false,
+						'outline' => false,
+						'hover' => false,
+						'circle' => false,
+						'label' => true,
+						'upper' => false,
+						'options' => ['href' => Url::toRoute(['/site/out'])],
+					]) ?>
 					<!-- <a href="" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a> -->
 				</div>
 			</div>

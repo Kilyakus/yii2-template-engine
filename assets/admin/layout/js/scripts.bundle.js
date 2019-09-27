@@ -2323,7 +2323,15 @@ var KTHeader = function(elementId, options) {
                 return;
             }
 
+            window.addEventListener('load', function() {
+                KTHeaderInit(the);
+            });
+
             window.addEventListener('scroll', function() {
+                KTHeaderInit(the);
+            });
+
+            function KTHeaderInit(the){
                 var offset = 0, on, off, st;
 
                 if (KTUtil.isInResponsiveRange('desktop')) {
@@ -2381,7 +2389,7 @@ var KTHeader = function(elementId, options) {
 
                     lastScrollTop = st;
                 }
-            });
+            }
         },
 
         /**

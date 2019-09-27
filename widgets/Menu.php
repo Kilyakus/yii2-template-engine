@@ -205,7 +205,7 @@ class Menu extends \yii\widgets\Menu {
 
         if ('#' === $url)
         {
-            return 'javascript:;';
+            return 'javascript://';
         }
 
         return Url::toRoute($item['url']);
@@ -224,7 +224,7 @@ class Menu extends \yii\widgets\Menu {
 
         if (1 == $level)
         {
-            return Html::tag('span', $label, ['class' => 'title']);
+            return Html::tag('span', $label, ['class' => 'kt-nav__link-text']);
         }
 
         return sprintf(' %s', $label);
@@ -275,7 +275,9 @@ class Menu extends \yii\widgets\Menu {
      */
     private function _pullItemBadge($item)
     {
-        return ArrayHelper::getValue($item, 'badge', '');
+        $count = ArrayHelper::getValue($item, 'badge', '');
+
+        return Html::tag('span', $count, ['class' => 'kt-nav__link-badge']);
     }
 
     /**
