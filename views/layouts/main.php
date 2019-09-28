@@ -3,7 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use kilyakus\web\widgets\Breadcrumbs;
 use bin\admin\components\API;
-use bin\admin\helpers\Image;
+use kilyakus\imageprocessor\Preloader;
 use bin\admin\modules\page\api\Page;
 
 use kilyakus\web\Engine;
@@ -71,7 +71,7 @@ $this->beginPage();
     <!-- end::Head -->
     
     <!-- begin::Body -->
-    <body <?= Layout::getHtmlOptions('body') ?> style="background-image: url(<?= Image::blur($page->model->image,1920,1080) ?>)">
+    <body <?= Layout::getHtmlOptions('body') ?> <?= Preloader::setAttributes($page->model->image,1920,1080) ?>>
         <?php $this->beginBody() ?>
 
         <!-- begin:: Page -->

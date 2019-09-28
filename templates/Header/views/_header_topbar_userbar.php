@@ -43,9 +43,24 @@ use kilyakus\web\widgets as Widget;
 
 			<!--begin: Navigation -->
 			<div class="kt-notification">
+				<?php if(Yii::$app->controller->module->id == 'app' && IS_MODER) : ?>
+					<a href="<?= Url::toRoute(['/admin']) ?>" class="kt-notification__item">
+						<div class="kt-notification__item-icon">
+							<i class="fa fa-desktop kt-font-danger"></i>
+						</div>
+						<div class="kt-notification__item-details">
+							<div class="kt-notification__item-title kt-font-bold">
+								<?= Yii::t('easyii', 'Control Panel') ?>
+							</div>
+							<div class="kt-notification__item-time">
+								System management
+							</div>
+						</div>
+					</a>
+				<?php endif; ?>
 				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user' : '/admin/user/info'),'id' => Yii::$app->user->id]) ?>" class="kt-notification__item">
 					<div class="kt-notification__item-icon">
-						<i class="flaticon2-calendar-3 kt-font-success"></i>
+						<i class="flaticon2-calendar-3 kt-font-primary"></i>
 					</div>
 					<div class="kt-notification__item-details">
 						<div class="kt-notification__item-title kt-font-bold">
@@ -58,7 +73,7 @@ use kilyakus\web\widgets as Widget;
 				</a>
 				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user/connection/chat' : '/admin/chat/message/chat')]) ?>" class="kt-notification__item">
 					<div class="kt-notification__item-icon">
-						<i class="flaticon2-mail kt-font-warning"></i>
+						<i class="flaticon2-mail kt-font-dark"></i>
 					</div>
 					<div class="kt-notification__item-details">
 						<div class="kt-notification__item-title kt-font-bold">
