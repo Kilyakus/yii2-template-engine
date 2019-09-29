@@ -1,12 +1,19 @@
 <?php
 namespace kilyakus\web\templates\Header;
 
-class HeaderAsset extends \kilyakus\widgets\AssetBundle
+class HeaderAsset extends \yii\web\AssetBundle
 {
     public function init()
     {
-        $this->setSourcePath(__DIR__ . '/assets');
-        $this->setupAssets('css', ['css/header'],'template-header');
-        parent::init();
+        $this->sourcePath = __DIR__ . '/assets';
     }
+
+    public $css = [
+        'css/_header.css',
+    ];
+
+    public $depends = [
+        'yii\web\YiiAsset',
+        'kilyakus\library\base\BaseAsset',
+    ];
 }

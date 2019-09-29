@@ -13,7 +13,7 @@ use yii\helpers\Html;
 
 	<?= $this->render('_header_topbar_languagebar',compact('baseUrl')) ?>
 
-	<?= $this->render('_header_topbar_userbar') ?>
+	<?= \kilyakus\web\templates\HeaderUserBar\UserBar::widget(['userbar' => $topbar['userbar']]) ?>
 
 	<?php $this->render('_header_topbar_quickpanel') ?>
 </div>

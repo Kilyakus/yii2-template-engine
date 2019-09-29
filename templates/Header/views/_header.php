@@ -1,7 +1,6 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
-use bin\admin\helpers\Image;
 ?>
 <!-- begin:: Header -->
 <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed" data-ktheader-minimize="on">
@@ -12,10 +11,10 @@ use bin\admin\helpers\Image;
 
 			<?= $this->render('_header_topbar_search') ?>
 
-			<?= $this->render('_header_topbar',compact('baseUrl')) ?>
+			<?= $this->render('_header_topbar',compact('topbar')) ?>
 		</div>
 	</div>
-	<?php if($pluginOptions['adminPanel'] === true) : ?>
+	<?php if($menu['adminPanel'] === true) : ?>
 		<div class="kt-header__bottom">
 			<div class="kt-container  kt-container--fluid ">
 				<?= $this->render('_header_menu') ?>

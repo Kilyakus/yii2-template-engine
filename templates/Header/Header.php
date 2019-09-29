@@ -6,8 +6,13 @@ use Yii;
 /*
 	
 	Header::widget([
-		'pluginOptions' => [
+		'menu' => [
 			'adminPanel' => true,
+		],
+		'topbar' => [
+			'userbar' => [
+				'adminPanel' => true,
+			]
 		]
 	]);
 
@@ -15,7 +20,9 @@ use Yii;
 
 class Header extends \yii\bootstrap\Widget
 {
-	public $pluginOptions = [];
+	public $menu = [];
+
+	public $topbar = [];
 
 	public function init()
 	{
@@ -26,6 +33,6 @@ class Header extends \yii\bootstrap\Widget
     {
         HeaderAsset::register($this->getView());
 
-        return $this->render('_header',['pluginOptions' => $this->pluginOptions]);
+        return $this->render('_header',['menu' => $this->menu, 'topbar' => $this->topbar]);
     }
 }
