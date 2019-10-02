@@ -3,13 +3,13 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
 <!--begin: Search -->
-<div class="kt-header__topbar kt-header__topbar-item kt-header__topbar-item--search">
+<div class="kt-header__topbar-item kt-header__topbar-item--search">
 	<div class="kt-header__topbar-wrapper">
 		<div class="kt-quick-search" id="kt_quick_search_default">
 			<form method="get" class="kt-quick-search__form">
 				<div class="input-group">
 					<div class="input-group-prepend"><span class="input-group-text"><i class="flaticon2-search-1"></i></span></div>
-					<input type="text" class="form-control kt-quick-search__input" placeholder="Search...">
+					<input type="text" class="form-control kt-quick-search__input" placeholder="<?= Yii::t('easyii', 'Search on') ?> zmey.ru">
 					<div class="input-group-append"><span class="input-group-text"><i class="la la-close kt-quick-search__close"></i></span></div>
 				</div>
 			</form>

@@ -9,8 +9,6 @@ use yii\helpers\Html;
 
 			<?= $this->render('_header_brand',compact('title')) ?>
 
-			<?= $this->render('_header_topbar_search') ?>
-
 			<?= $this->render('_header_topbar',compact('topbar')) ?>
 		</div>
 	</div>
