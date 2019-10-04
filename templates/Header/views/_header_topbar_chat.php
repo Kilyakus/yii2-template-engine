@@ -26,49 +26,41 @@ use yii\helpers\Html;
 					<div class="kt-notification kt-scroll" style="max-height:200px;" data-scroll="true" data-mobile-height="200">
 						<a href="/admin/user/info/1" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png">
+								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
-									Мой Профиль						</div>
-								<div class="kt-notification__item-time">
-									Account settings and more
+									111
 								</div>
 							</div>
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png">
+								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
-									Мои Сообщения						</div>
-								<div class="kt-notification__item-time">
-									Inbox and tasks
+									111
 								</div>
 							</div>
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png">
+								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
-									Мои Сообщения						</div>
-								<div class="kt-notification__item-time">
-									Inbox and tasks
+									111
 								</div>
 							</div>
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png">
+								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
-									Мои Сообщения						</div>
-								<div class="kt-notification__item-time">
-									Inbox and tasks
+									111
 								</div>
 							</div>
 						</a>

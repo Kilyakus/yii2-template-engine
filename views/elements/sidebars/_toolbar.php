@@ -24,7 +24,7 @@ use kilyakus\web\widgets as Widget;
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <?= \bin\admin\modules\chat\widgets\chat\ChatPrivate::widget([
-                'path' => Url::toRoute([IS_MODER ? '/admin/chat/message/chat' : '/user/connection/chat']),
+                'path' => Url::toRoute([IS_MODER ? '/admin/chat/message' : '/user/connection']),
                 'id' => null,
                 'expand' => false,
             ]) ?>
