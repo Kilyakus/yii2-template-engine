@@ -42,68 +42,50 @@ use kilyakus\web\widgets as Widget;
 			<!--end: Head -->
 
 			<!--begin: Navigation -->
-			<div class="kt-notification">
-				<?php if(Yii::$app->controller->module->id == 'app' && IS_MODER) : ?>
-					<a href="<?= Url::toRoute(['/admin']) ?>" class="kt-notification__item">
-						<div class="kt-notification__item-icon">
-							<i class="fa fa-desktop kt-font-danger"></i>
-						</div>
-						<div class="kt-notification__item-details">
-							<div class="kt-notification__item-title kt-font-bold">
-								<?= Yii::t('easyii', 'Control Panel') ?>
-							</div>
-							<div class="kt-notification__item-time">
-								System management
-							</div>
-						</div>
-					</a>
+				
+				<?php if(count($userbar['items'])) : ?>
+					<div class="kt-notification" data-scroll="true" style="max-height: 55vh; overflow: hidden;">
+						<?php foreach ($userbar['items'] as $item) : ?>
+							<?php if($item['visible'] == true) : ?>
+								<a href="<?= $item['url'] ?>" class="kt-notification__item">
+									<div class="kt-notification__item-icon">
+										<i class="<?= $item['icon'] ?> <?= $item['iconOptions']['class'] ?>"></i>
+									</div>
+									<div class="kt-notification__item-details">
+										<div class="kt-notification__item-title kt-font-bold">
+											<?= $item['label'] ?>
+										</div>
+										<div class="kt-notification__item-time">
+											<?= $item['description'] ?>
+										</div>
+									</div>
+								</a>
+							<?php endif; ?>
+						<?php endforeach; ?>
+					</div>
 				<?php endif; ?>
-				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user' : '/admin/user/info'),'id' => Yii::$app->user->id]) ?>" class="kt-notification__item">
-					<div class="kt-notification__item-icon">
-						<i class="flaticon2-calendar-3 kt-font-primary"></i>
-					</div>
-					<div class="kt-notification__item-details">
-						<div class="kt-notification__item-title kt-font-bold">
-							<?= Yii::t('easyii', 'My Profile') ?>
-						</div>
-						<div class="kt-notification__item-time">
-							Account settings and more
-						</div>
-					</div>
-				</a>
-				<a href="<?= Url::toRoute([(Yii::$app->controller->module->id == 'app' ? '/user/connection/chat' : '/admin/chat/message/chat')]) ?>" class="kt-notification__item">
-					<div class="kt-notification__item-icon">
-						<i class="flaticon2-mail kt-font-dark"></i>
-					</div>
-					<div class="kt-notification__item-details">
-						<div class="kt-notification__item-title kt-font-bold">
-							<?= Yii::t('easyii', 'My Messages') ?>
-						</div>
-						<div class="kt-notification__item-time">
-							Inbox and tasks
-						</div>
-					</div>
-				</a>
-				<div class="kt-notification__custom kt-space-between">
-					<?= Widget\Button::widget([
-						'tagName' => 'a',
-						'title' => Yii::t('easyii','Logout'),
-						'type' => Widget\Button::TYPE_BRAND,
-						'size' => Widget\Button::SIZE_SMALL,
-						'disabled' => false,
-						'block' => false,
-						'outline' => false,
-						'hover' => false,
-						'circle' => false,
-						'label' => true,
-						'upper' => false,
-						'options' => ['href' => Url::toRoute(['/site/out'])],
-					]) ?>
-					<!-- <a href="" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a> -->
-				</div>
-			</div>
 
-			<!--end: Navigation -->
+				<div class="kt-notification">
+					<div class="kt-notification__custom kt-space-between">
+						<?= Widget\Button::widget([
+							'tagName' => 'a',
+							'title' => Yii::t('easyii','Logout'),
+							'type' => Widget\Button::TYPE_BRAND,
+							'size' => Widget\Button::SIZE_SMALL,
+							'disabled' => false,
+							'block' => false,
+							'outline' => false,
+							'hover' => false,
+							'circle' => false,
+							'label' => true,
+							'upper' => false,
+							'options' => ['href' => Url::toRoute(['/site/out'])],
+						]) ?>
+						<!-- <a href="" target="_blank" class="btn btn-clean btn-sm btn-bold">Upgrade Plan</a> -->
+					</div>
+				</div>
+
+				<!--end: Navigation -->
 		</div>
 	</div>
 <?php endif; ?>

@@ -88,6 +88,28 @@ $this->beginPage();
                         ],
                         'topbar' => [
                             'userbar' => [
+                                'items' => [
+                                    [
+                                        'label' => Yii::t('easyii', 'My Profile'),
+                                        'description' => Yii::t('easyii', 'Account settings and more'),
+                                        'url' => Url::toRoute(['/admin/user/info', 'id' => Yii::$app->user->id]),
+                                        'icon' => 'fa fa-home',
+                                        'iconOptions' => [
+                                            'class' => 'kt-label-font-color-2',
+                                        ],
+                                        'visible' => true,
+                                    ],
+                                    [
+                                        'label' => Yii::t('easyii', 'My Messages'),
+                                        'description' => Yii::t('easyii', 'Inbox and tasks'),
+                                        'url' => Url::toRoute(['/admin/chat/message/chat']),
+                                        'icon' => 'fa fa-envelope',
+                                        'iconOptions' => [
+                                            'class' => 'kt-label-font-color-2',
+                                        ],
+                                        'visible' => true,
+                                    ],
+                                ]
                             ]
                         ]
                     ]) ?>
