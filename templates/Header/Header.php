@@ -11,7 +11,18 @@ use Yii;
 		],
 		'topbar' => [
 			'userbar' => [
-				'adminPanel' => true,
+				'items' => [
+                    [
+                        'label' => Yii::t('demo', 'Control Panel'),
+                        'description' => Yii::t('demo', 'System management'),
+                        'url' => Url::toRoute(['/demo']),
+                        'icon' => 'fa fa-desktop',
+                        'iconOptions' => [
+                            'class' => 'kt-font-danger',
+                        ],
+                        'visible' => IS_MODER,
+                    ],
+                ]
 			]
 		]
 	]);
@@ -20,6 +31,8 @@ use Yii;
 
 class Header extends \yii\bootstrap\Widget
 {
+	public $options = [];
+
 	public $menu = [];
 
 	public $topbar = [];
@@ -33,6 +46,6 @@ class Header extends \yii\bootstrap\Widget
     {
         HeaderAsset::register($this->getView());
 
-        return $this->render('_header',['menu' => $this->menu, 'topbar' => $this->topbar]);
+        return $this->render('_header',['options' => $this->options, 'menu' => $this->menu, 'topbar' => $this->topbar]);
     }
 }
