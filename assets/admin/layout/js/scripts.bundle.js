@@ -9498,7 +9498,7 @@ var KTLayout = function() {
             offset: {
                 // desktop: parseInt(KTUtil.css(headerEl, 'height')) - 10,
                 // mobile: parseInt(KTUtil.css(headerMobileEl, 'height')) - 10,
-                desktop: 1,
+                desktop: 30,
                 mobile: 50,
             },
             minimize: {
