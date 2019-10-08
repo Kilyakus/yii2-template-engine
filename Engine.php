@@ -273,6 +273,7 @@ class Engine extends \yii\base\Component {
      */
     public static function registerThemeAsset($view)
     {
+        \kilyakus\switcher\SwitcherAsset::register($view);
         return static::$assetsBundle = ThemeAsset::register($view);
     }
 
