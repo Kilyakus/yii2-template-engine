@@ -16,7 +16,7 @@ use yii\helpers\Html;
 				<div class="kt-mycart__head kt-head" style="background-image: url(https://keenthemes.com/metronic/themes/metronic/theme/default/demo8/dist/assets/media/misc/bg-1.jpg);">
 					<div class="kt-mycart__info">
 						<span class="kt-mycart__icon"><i class="flaticon2-chat-2 kt-font-success"></i></span>
-						<h3 class="kt-mycart__title">My Cart</h3>
+						<h3 class="kt-mycart__title"><?= Yii::t('easyii', 'My Messages') ?></h3>
 					</div>
 					<div class="kt-mycart__button">
 						<button type="button" class="btn btn-success btn-sm" style=" ">2 Items</button>
@@ -26,7 +26,7 @@ use yii\helpers\Html;
 					<div class="kt-notification kt-scroll" style="max-height:200px;" data-scroll="true" data-mobile-height="200">
 						<a href="/admin/user/info/1" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
+								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
@@ -36,7 +36,7 @@ use yii\helpers\Html;
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
+								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
@@ -46,7 +46,7 @@ use yii\helpers\Html;
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
+								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">
@@ -56,7 +56,7 @@ use yii\helpers\Html;
 						</a>
 						<a href="/admin/chat/message/chat" class="kt-notification__item">
 							<div class="kt-notification__item-icon">
-								<img src="http://zmey/uploads/thumbs/da-c435b564ac812908bf271a2cd2b88243-ac441418d5b547c852ea2d93a9e7a308.png" class="img-circle">
+								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
 							</div>
 							<div class="kt-notification__item-details">
 								<div class="kt-notification__item-title kt-font-bold">

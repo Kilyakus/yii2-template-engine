@@ -15,6 +15,7 @@ use yii\bootstrap\Modal;
 <?php Modal::begin([
     'toggleButton' => [
         'label' => Yii::t('easyii','Обратная связь'),
+        'class' => 'btn btn-secondary btn-elevate btn-pill'
     ],
     'id' => 'feedbackForm',
     'headerOptions' => ['class' => 'hidden'],

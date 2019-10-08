@@ -64,7 +64,7 @@
     .kt-header__topbar .kt-header__topbar-item.kt-header__topbar-item--user .kt-header__topbar-welcome {display:flex;align-self:center;padding:0 0.55rem 0 0;font-weight:500;font-size:0.9rem;color:#fff;}
     .kt-header__topbar .kt-header__topbar-item.kt-header__topbar-item--user .kt-header__topbar-username {display:flex;align-self:center;padding:0 0 0 0.55rem;font-weight:500;font-size:1rem;color:#fff;}
     .kt-header__topbar .kt-header__topbar-item.kt-header__topbar-item--user .kt-header__topbar-wrapper img {align-self:center;height:42px;border-radius:50%;}
-    .kt-header__topbar-item.kt-header__topbar-item--search {width:210px;justify-content:center;position:absolute;margin:auto;left:0;right:0;}
+    .kt-header__topbar-item.kt-header__topbar-item--search {width:210px;justify-content:center;margin:auto;left:0;right:0;}
     .kt-header__topbar-item.kt-header__topbar-item--search .kt-quick-search {display:flex;align-items:stretch;width:100%;padding:0;}
       .kt-header__topbar-item.kt-header__topbar-item--search .kt-quick-search .kt-quick-search__form {display:flex;align-items:center;border-radius:30px;background-color:transparent;}
         .kt-header__topbar-item.kt-header__topbar-item--search .kt-quick-search .kt-quick-search__form .input-group {border-radius:30px;background-color:transparent;border:1px solid rgba(255, 255, 255, 0.2);}
@@ -74,6 +74,10 @@
           .kt-header__topbar-item.kt-header__topbar-item--search .kt-quick-search .kt-quick-search__form .form-control::-webkit-input-placeholder {  color:#FFF;}
         .kt-header__topbar-item.kt-header__topbar-item--search .kt-quick-search .kt-quick-search__form i {font-size:1.3rem;color:#FFF;}
     .kt-header__topbar .kt-header__topbar-item:last-child {margin-right:0;}
+
+@media (min-width:1024px) {
+  .kt-header__topbar-item.kt-header__topbar-item--search {position:absolute;}
+}
 
 .kt-header--fixed.kt-header--minimize .kt-header__topbar .kt-header__topbar-item .kt-header__topbar-icon {border:1px solid #ebedf2;}
   .kt-header--fixed.kt-header--minimize .kt-header__topbar .kt-header__topbar-item .kt-header__topbar-icon i {color:#74788d;}
@@ -817,7 +821,7 @@
 }
 
 @media (min-width:1025px) {
-  .kt-aside--fixed.kt-header--minimize .kt-aside-menu-wrapper {transition:all 0.3s ease;position:fixed;top:auto;bottom:auto;width:245px;z-index:98;}
+  .kt-aside--fixed.kt-header--minimize .kt-aside-menu-wrapper {transition:all 0.3s ease;position:fixed;top:auto;bottom:auto;width:245px;/*z-index:98;*/}
   .kt-header--minimize.kt-header--minimize.kt-aside--fixed .kt-aside-menu-wrapper {top:60px;}
 }
 

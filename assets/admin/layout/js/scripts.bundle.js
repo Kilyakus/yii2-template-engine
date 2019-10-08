@@ -9364,7 +9364,7 @@ var KTQuickSearch = function() {
 
         setTimeout(function() {
             $.ajax({
-                url: 'https://keenthemes.com/metronic/themes/themes/metronic/dist/preview/inc/api/quick_search.php',
+                url: '/search/index',
                 data: {
                     query: query
                 },
