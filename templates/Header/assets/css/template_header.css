@@ -1,3 +1,5 @@
+.kt-header__topbar button {color:#000;}
+
 .kt-header {background-size:cover;background-position:center;}
 .kt-header--minimize .kt-header {background-image:none!important;}
 .kt-header--minimize .kt-header__additional {display:none;}

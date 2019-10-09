@@ -10,7 +10,7 @@ use yii\helpers\Html;
 			<span class="kt-header__brand-logo-sticky kt-shape-font-color-4 fa-2x">Zmey.ru</span>
 		</a>
 	</div>
-	<div class="kt-header__topbar">
+	<div class="kt-header__topbar hidden-xs">
 		<?= $this->render('_header_topbar_languagebar',compact('baseUrl')) ?>
 	</div>
 </div>
