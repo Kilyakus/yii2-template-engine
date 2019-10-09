@@ -2,81 +2,30 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
-<!--begin: Cart -->
-<div class="kt-header__topbar-item dropdown">
-	<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,10px">
+
+<?php if($chat) : ?>
+<!--begin: Chat Counter -->
+<div class="kt-header__topbar-item">
+	<div class="kt-header__topbar-wrapper position-relative" data-toggle="modal" data-target="#kt_chat_modal">
 		<span class="kt-header__topbar-icon"><i class="flaticon2-chat-2"></i></span>
-		<span class="kt-badge kt-badge--success position-absolute kt-align-right">8</span>
-	</div>
-	<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-xl">
-		<form>
-
-			<!-- begin:: Mycart -->
-			<div class="kt-mycart">
-				<div class="kt-mycart__head kt-head" style="background-image: url(https://keenthemes.com/metronic/themes/metronic/theme/default/demo8/dist/assets/media/misc/bg-1.jpg);">
-					<div class="kt-mycart__info">
-						<span class="kt-mycart__icon"><i class="flaticon2-chat-2 kt-font-success"></i></span>
-						<h3 class="kt-mycart__title"><?= Yii::t('easyii', 'My Messages') ?></h3>
-					</div>
-					<div class="kt-mycart__button">
-						<button type="button" class="btn btn-success btn-sm" style=" ">2 Items</button>
-					</div>
-				</div>
-				<div class="kt-mycart__body">
-					<div class="kt-notification kt-scroll" style="max-height:200px;" data-scroll="true" data-mobile-height="200">
-						<a href="/admin/user/info/1" class="kt-notification__item">
-							<div class="kt-notification__item-icon">
-								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
-							</div>
-							<div class="kt-notification__item-details">
-								<div class="kt-notification__item-title kt-font-bold">
-									111
-								</div>
-							</div>
-						</a>
-						<a href="/admin/chat/message/chat" class="kt-notification__item">
-							<div class="kt-notification__item-icon">
-								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
-							</div>
-							<div class="kt-notification__item-details">
-								<div class="kt-notification__item-title kt-font-bold">
-									111
-								</div>
-							</div>
-						</a>
-						<a href="/admin/chat/message/chat" class="kt-notification__item">
-							<div class="kt-notification__item-icon">
-								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
-							</div>
-							<div class="kt-notification__item-details">
-								<div class="kt-notification__item-title kt-font-bold">
-									111
-								</div>
-							</div>
-						</a>
-						<a href="/admin/chat/message/chat" class="kt-notification__item">
-							<div class="kt-notification__item-icon">
-								<img src="<?= Yii::$app->user->identity->getAvatar(50,50) ?>" class="img-circle">
-							</div>
-							<div class="kt-notification__item-details">
-								<div class="kt-notification__item-title kt-font-bold">
-									111
-								</div>
-							</div>
-						</a>
-					</div>
-					
-				</div>
-				<div class="kt-mycart__footer kt-notification__custom kt-space-between">
-					<div class="kt-mycart__button kt-align-right">
-						<button type="button" class="btn btn-primary btn-sm">Открыть чат</button>
-					</div>
-				</div>
-			</div>
-
-			<!-- end:: Mycart -->
-		</form>
+		<span class="kt-badge kt-badge--success position-absolute" style="right:0;"><?= $chat['recent'] ?></span>
 	</div>
 </div>
+<!--end: Chat Counter -->
 
-<!--end: Cart-->
+<!--Begin:: Chat-->
+<div class="modal fade- modal-sticky-bottom-right" id="kt_chat_modal" role="dialog" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <?= \bin\admin\modules\chat\widgets\chat\ChatPrivate::widget([
+                'path' => $chat['path'],
+                'id' => null,
+                'expand' => false,
+            ]) ?>
+      
+        </div>
+    </div>
+</div>
+
+<!--ENd:: Chat-->
+<?php endif; ?>

@@ -9,6 +9,6 @@ class UserBarAsset extends \yii\web\AssetBundle
     }
 
     public $css = [
-        'css/_header_topbar_userbar.css',
+        'css/template_header_topbar_userbar.css',
     ];
 }

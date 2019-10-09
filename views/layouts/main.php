@@ -5,6 +5,7 @@ use kilyakus\web\widgets\Breadcrumbs;
 use bin\admin\components\API;
 use kilyakus\imageprocessor\Preloader;
 use bin\admin\modules\page\api\Page;
+use bin\admin\modules\chat\api\Chat;
 
 use kilyakus\web\Engine;
 use kilyakus\web\helpers\Layout;
@@ -87,6 +88,10 @@ $this->beginPage();
                             'adminPanel' => true
                         ],
                         'topbar' => [
+                            'chat' => [
+                                'recent' => Chat::noAnswer(),
+                                'path' => '/admin/chat/message',
+                            ],
                             'userbar' => [
                                 'items' => [
                                     [

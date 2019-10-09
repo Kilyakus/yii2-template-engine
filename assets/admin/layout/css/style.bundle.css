@@ -37,7 +37,7 @@
 }
 
 
-body {font-family:"Gotham";color:#212529;background-color:#fff;}
+body {font-family:"Gotham";color:#212529;background-color:#fff;padding-right:0px!important;}
 
 
 a {color:#2986FF;}
@@ -5137,9 +5137,6 @@ strong {font-weight:bold;}
 
 .kt-negative-spacing--10 {margin-top:-100px;}
 
-@media(min-width:1024px){
-  .kt-grid.kt-grid--hor:not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile).kt-grid--root {width:100vw;}
-}
 .kt-grid.kt-grid--hor:not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile) {display:flex;flex-direction:column;}
   .kt-grid.kt-grid--hor:not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile).kt-grid--root {flex:1;background:rgba(0,0,0,0.5);-ms-flex:1 0 0px;}
   .kt-grid.kt-grid--hor:not(.kt-grid--desktop):not(.kt-grid--desktop-and-tablet):not(.kt-grid--tablet):not(.kt-grid--tablet-and-mobile):not(.kt-grid--mobile) > .kt-grid__item {flex:none;}

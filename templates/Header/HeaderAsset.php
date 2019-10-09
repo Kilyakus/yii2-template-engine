@@ -9,7 +9,7 @@ class HeaderAsset extends \yii\web\AssetBundle
     }
 
     public $css = [
-        'css/_header.css',
+        'css/template_header.css',
     ];
 
     public $depends = [

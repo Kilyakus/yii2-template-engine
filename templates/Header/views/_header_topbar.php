@@ -12,10 +12,8 @@ use yii\helpers\Html;
 	<?php $this->render('_header_topbar_quickactions') ?>
 
 	<?php $this->render('_header_topbar_cart') ?>
-
-	<?php if(IS_ROOT) : ?>
-		<?= $this->render('_header_topbar_chat') ?>
-	<?php endif; ?>
+	
+	<?= $this->render('_header_topbar_chat',['chat' => $topbar['chat']]) ?>
 
 	<?= \kilyakus\web\templates\HeaderUserBar\UserBar::widget(['userbar' => $topbar['userbar']]) ?>
 
