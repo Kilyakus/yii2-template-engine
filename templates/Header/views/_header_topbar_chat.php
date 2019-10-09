@@ -3,7 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
 
-<?php if($chat) : ?>
+<?php if($chat && !Yii::$app->user->isGuest) : ?>
 <!--begin: Chat Counter -->
 <div class="kt-header__topbar-item">
 	<div class="kt-header__topbar-wrapper position-relative" data-toggle="modal" data-target="#kt_chat_modal">
