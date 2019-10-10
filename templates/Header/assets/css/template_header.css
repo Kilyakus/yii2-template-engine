@@ -108,7 +108,7 @@
 
 @media (max-width:1024px) {
   .kt-header__topbar {padding:0 15px;background-color:#fff;transition:all 0.3s ease;height:50px;position:absolute;left:0;right:0;justify-content:flex-end;width:100%;border-top:1px solid transparent;display:none;}
-    .kt-header-mobile--fixed .kt-header__topbar {position:fixed;z-index:96;}
+    .kt-header-mobile--fixed .kt-header__topbar {position:fixed;top:60px;z-index:96;}
     .kt-header__topbar--mobile-on .kt-header__topbar {display:flex;transition:all 0.3s ease;}
     .kt-header__topbar .kt-header__topbar-item {margin:0 0.25rem;}
       .kt-header__topbar .kt-header__topbar-item .kt-header__topbar-wrapper {display:flex;align-items:stretch;}

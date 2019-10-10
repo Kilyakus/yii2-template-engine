@@ -2,6 +2,9 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
+
+<?= $this->render('@kilyakus/web/views/elements/header/_header_mobile',['baseUrl' => $baseUrl]) ?>
+
 <!-- begin:: Header -->
 <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed <?= isset($options['class']) ? $options['class'] : ''; ?>" data-ktheader-minimize="on">
 	<div class="kt-header__top">
