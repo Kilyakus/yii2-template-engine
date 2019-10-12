@@ -75,47 +75,48 @@ $this->beginPage();
     <body <?= Layout::getHtmlOptions('body') ?> <?= Preloader::setAttributes($page->model->image,1920,1080) ?>>
         <?php $this->beginBody() ?>
 
+            <?= \kilyakus\web\templates\Header\Header::widget([
+                'menu' => [
+                    'adminPanel' => true
+                ],
+                'topbar' => [
+                    'chat' => [
+                        'recent' => Chat::noAnswer(),
+                        'path' => '/admin/chat/message',
+                    ],
+                    'userbar' => [
+                        'items' => [
+                            [
+                                'label' => Yii::t('easyii', 'My Profile'),
+                                'description' => Yii::t('easyii', 'Account settings and more'),
+                                'url' => Url::toRoute(['/admin/user/info', 'id' => Yii::$app->user->id]),
+                                'icon' => 'fa fa-home',
+                                'iconOptions' => [
+                                    'class' => 'kt-label-font-color-2',
+                                ],
+                                'visible' => true,
+                            ],
+                            [
+                                'label' => Yii::t('easyii', 'My Messages'),
+                                'description' => Yii::t('easyii', 'Inbox and tasks'),
+                                'url' => Url::toRoute(['/admin/chat/message/chat']),
+                                'icon' => 'fa fa-envelope',
+                                'iconOptions' => [
+                                    'class' => 'kt-label-font-color-2',
+                                ],
+                                'visible' => true,
+                            ],
+                        ]
+                    ]
+                ]
+            ]) ?>
         <!-- begin:: Page -->
 
         <div class="kt-grid kt-grid--hor kt-grid--root">
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
 
-                    <?= \kilyakus\web\templates\Header\Header::widget([
-                        'menu' => [
-                            'adminPanel' => true
-                        ],
-                        'topbar' => [
-                            'chat' => [
-                                'recent' => Chat::noAnswer(),
-                                'path' => '/admin/chat/message',
-                            ],
-                            'userbar' => [
-                                'items' => [
-                                    [
-                                        'label' => Yii::t('easyii', 'My Profile'),
-                                        'description' => Yii::t('easyii', 'Account settings and more'),
-                                        'url' => Url::toRoute(['/admin/user/info', 'id' => Yii::$app->user->id]),
-                                        'icon' => 'fa fa-home',
-                                        'iconOptions' => [
-                                            'class' => 'kt-label-font-color-2',
-                                        ],
-                                        'visible' => true,
-                                    ],
-                                    [
-                                        'label' => Yii::t('easyii', 'My Messages'),
-                                        'description' => Yii::t('easyii', 'Inbox and tasks'),
-                                        'url' => Url::toRoute(['/admin/chat/message/chat']),
-                                        'icon' => 'fa fa-envelope',
-                                        'iconOptions' => [
-                                            'class' => 'kt-label-font-color-2',
-                                        ],
-                                        'visible' => true,
-                                    ],
-                                ]
-                            ]
-                        ]
-                    ]) ?>
+                    
 
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
                         <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
