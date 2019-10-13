@@ -1,8 +1,8 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use kilyakus\widget\flag\Flag;
 use kilyakus\web\widgets as Widget;
-$baseUrl = \kilyakus\nav\NavAsset::register($this)->baseUrl;
 
 function langUrl($lang)
 {
@@ -21,12 +21,12 @@ function langUrl($lang)
 			'encodeLabels' => false,
 			'items' => [
 				[
-					'label' => '<span class="kt-nav__link-icon"><img src="'. $baseUrl .'/img/ru.svg"></span><span class="kt-nav__link-text">Русский</span>',
+					'label' => '<span class="kt-nav__link-icon">' . Flag::widget(['flag' => Flag::FLAG_RU]) . '</span><span class="kt-nav__link-text">Русский</span>',
 					'url' => langUrl('ru'),
 					'active' => Yii::$app->language == 'ru',
 				],
 				[
-					'label' => '<span class="kt-nav__link-icon"><img src="'. $baseUrl .'/img/en.svg"></span><span class="kt-nav__link-text">English</span>',
+					'label' => '<span class="kt-nav__link-icon">' . Flag::widget(['flag' => Flag::FLAG_EN]) . '</span><span class="kt-nav__link-text">English</span>',
 					'url' => langUrl('en'),
 					'active' => Yii::$app->language == 'en',
 				]
