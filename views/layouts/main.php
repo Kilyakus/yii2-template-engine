@@ -27,6 +27,10 @@ if(empty($nav)){
     $nav = [];
 }
 if($moduleName == 'forum'){
+}elseif($moduleName == 'system'){
+    $nav['translations'] = (object)['url' => Url::to(['/system/translations']), 'title' => Yii::t('easyii', 'Translations'), 'icon' => 'fa fa-language'];
+    $nav['modules'] = (object)['url' => Url::to(['/system/modules']), 'title' => Yii::t('easyii', 'Modules'), 'icon' => 'fa fa-archive'];
+    $nav['settings'] = (object)['url' => Url::to(['/system/settings']), 'title' => Yii::t('easyii', 'Settings'), 'icon' => 'fa fa-cog'];
 }else{
     foreach(Yii::$app->getModule('admin')->activeModules as $key => $activeModule){
         $activeClass = API::getClass($activeModule->name,'api',$activeModule->name);
