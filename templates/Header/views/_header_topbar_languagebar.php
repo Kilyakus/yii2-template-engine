@@ -13,7 +13,7 @@ function langUrl($lang)
 <div class="kt-header__topbar-item kt-header__topbar-item--langs">
 	<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,10px">
 		<span class="kt-header__topbar-icon">
-			<img src="<?= $baseUrl ?>/img/<?= Yii::$app->language ?>.svg" alt="" />
+			<?= Flag::widget(['flag' => Yii::$app->language]) ?>
 		</span>
 	</div>
 	<div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim">
