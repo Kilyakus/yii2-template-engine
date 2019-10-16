@@ -3,11 +3,6 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use kilyakus\widget\flag\Flag;
 use kilyakus\web\widgets as Widget;
-
-function langUrl($lang)
-{
-	return array_merge(Yii::$app->request->get(), ['language' => $lang]);
-}
 ?>
 <!--begin: Language bar -->
 <div class="kt-header__topbar-item kt-header__topbar-item--langs">
@@ -22,12 +17,12 @@ function langUrl($lang)
 			'items' => [
 				[
 					'label' => '<span class="kt-nav__link-icon">' . Flag::widget(['flag' => Flag::FLAG_RU]) . '</span><span class="kt-nav__link-text">Русский</span>',
-					'url' => langUrl('ru'),
+					'url' => array_merge(Yii::$app->request->get(), ['language' => 'ru']),
 					'active' => Yii::$app->language == 'ru',
 				],
 				[
 					'label' => '<span class="kt-nav__link-icon">' . Flag::widget(['flag' => Flag::FLAG_EN]) . '</span><span class="kt-nav__link-text">English</span>',
-					'url' => langUrl('en'),
+					'url' => array_merge(Yii::$app->request->get(), ['language' => 'en']),
 					'active' => Yii::$app->language == 'en',
 				]
 			]
