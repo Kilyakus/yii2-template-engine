@@ -8,7 +8,7 @@
 namespace kilyakus\web\widgets;
 
 use Yii;
-use kilyakus\web\bundles\PortletAsset;
+use kilyakus\portlet\PortletAsset;
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
@@ -50,17 +50,20 @@ use yii\helpers\Html;
  * ```
  *
  */
-class PortletTabs extends \yii\bootstrap\Tabs {
-
-    // Tab placements.
+class PortletTabs extends \yii\bootstrap\Tabs
+{
     const PLACEMENT_ABOVE = 'above';
     const PLACEMENT_BELOW = 'below';
     const PLACEMENT_LEFT = 'left';
     const PLACEMENT_RIGHT = 'right';
-    // Tab type
+
+    const TYPE_NONE = '';
+    const TYPE_DEFAULT = 'default';
+
     const NAV_TYPE_TABS = 'nav-tabs';
     const NAV_TYPE_PILLS = 'nav-pills';
 
+    public $type = self::TYPE_DEFAULT;
     /**
      * @var string, specifies the Bootstrap tab styling.
      * Valid values 'nav-tabs',  'nav-pills'
@@ -83,6 +86,8 @@ class PortletTabs extends \yii\bootstrap\Tabs {
      */
     public $justified = false;
 
+    public $bodyOptions = [];
+
     /**
      * Initializes the widget.
      */
@@ -92,6 +97,8 @@ class PortletTabs extends \yii\bootstrap\Tabs {
         {
             Html::addCssClass($this->options, 'nav-justified');
         }
+
+        $this->bodyOptions = array_merge_recursive(['class' => 'kt-portlet__body tab-content'],$this->bodyOptions);
 
         Html::addCssClass($this->options, 'nav-tabs-line nav ' . $this->navType);
         parent::init();
@@ -103,7 +110,7 @@ class PortletTabs extends \yii\bootstrap\Tabs {
     public function run()
     {
 
-        $classWrap = ['kt-portlet kt-portlet--tabs tabs-' . $this->placement];
+        $classWrap = ['kt-portlet kt-portlet--tabs tabs-' . $this->placement . ' ' . $this->type];
         if ($this->styled)
         {
             $classWrap[] = 'tabbable-custom';
@@ -187,7 +194,7 @@ class PortletTabs extends \yii\bootstrap\Tabs {
         $head = Html::beginTag('div', ['class' => 'kt-portlet__head']);
         $head .= Html::tag('ul', implode("\n", $headers), $this->options);
         $head .= Html::endTag('div');
-        $panes = Html::tag('div', implode("\n", $panes), ['class' => 'tab-content']);
+        $panes = Html::tag('div', implode("\n", $panes), $this->bodyOptions);
 
         return ($this->placement == self::PLACEMENT_BELOW) ? ($panes . "\n" . $head) : ($head . "\n" . $panes);
     }
