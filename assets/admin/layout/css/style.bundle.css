@@ -39,6 +39,8 @@
 
 body {font-family:"Gotham";color:#212529;background-color:#fff;padding-right:0px!important;}
 
+body > * {z-index:1;}
+
 
 a {color:#2986FF;}
   a:hover {color:#206bcc;}
@@ -1758,7 +1760,7 @@ code {background-color:#f7f8fa;}
     .modal.modal-sticky-bottom-right .modal-dialog .modal-content {border:0;border-radius:4px;}
 
 .modal-open {    overflow: hidden;
-    height: 100vh;}
+    /*height: 100vh;*/}
 
 .modal-body.modal-body-fit {padding:0;}
 

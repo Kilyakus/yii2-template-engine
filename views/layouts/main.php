@@ -63,105 +63,73 @@ if($moduleName == 'forum'){
 
 $this->beginPage();
 ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-    <!-- begin::Head -->
-    <head>
-        <meta charset="<?= Yii::$app->charset ?>">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <?= Html::csrfMetaTags() ?>
-        <title><?= Yii::t('easyii', 'Control Panel') ?> - <?= Yii::t('easyii', Html::encode($this->title)) ?></title>
-        <?php $this->head() ?>
-    </head>
-    <!-- end::Head -->
-    
-    <!-- begin::Body -->
-    <body <?= Layout::getHtmlOptions('body') ?> <?= Preloader::setAttributes($page->model->image,1920,1080) ?>>
-        <?php $this->beginBody() ?>
 
-            <?= \kilyakus\web\templates\Header\Header::widget([
-                'menu' => [
-                    'adminPanel' => true
-                ],
-                'topbar' => [
-                    'chat' => [
-                        'recent' => Chat::noAnswer(),
-                        'path' => '/admin/chat/message',
+<?php $this->beginContent('@kilyakus/web/views/layouts/base.php'); ?>
+
+    <?= \kilyakus\web\templates\Header\Header::widget([
+        'menu' => [
+            'adminPanel' => true
+        ],
+        'topbar' => [
+            'chat' => [
+                'recent' => Chat::noAnswer(),
+                'path' => '/admin/chat/message',
+            ],
+            'userbar' => [
+                'items' => [
+                    [
+                        'label' => Yii::t('easyii', 'My Profile'),
+                        'description' => Yii::t('easyii', 'Account settings and more'),
+                        'url' => Url::toRoute(['/admin/user/info', 'id' => Yii::$app->user->id]),
+                        'icon' => 'fa fa-home',
+                        'iconOptions' => [
+                            'class' => 'kt-label-font-color-2',
+                        ],
+                        'visible' => true,
                     ],
-                    'userbar' => [
-                        'items' => [
-                            [
-                                'label' => Yii::t('easyii', 'My Profile'),
-                                'description' => Yii::t('easyii', 'Account settings and more'),
-                                'url' => Url::toRoute(['/admin/user/info', 'id' => Yii::$app->user->id]),
-                                'icon' => 'fa fa-home',
-                                'iconOptions' => [
-                                    'class' => 'kt-label-font-color-2',
-                                ],
-                                'visible' => true,
-                            ],
-                            [
-                                'label' => Yii::t('easyii', 'My Messages'),
-                                'description' => Yii::t('easyii', 'Inbox and tasks'),
-                                'url' => Url::toRoute(['/admin/chat/message/chat']),
-                                'icon' => 'fa fa-envelope',
-                                'iconOptions' => [
-                                    'class' => 'kt-label-font-color-2',
-                                ],
-                                'visible' => true,
-                            ],
-                        ]
-                    ]
+                    [
+                        'label' => Yii::t('easyii', 'My Messages'),
+                        'description' => Yii::t('easyii', 'Inbox and tasks'),
+                        'url' => Url::toRoute(['/admin/chat/message/chat']),
+                        'icon' => 'fa fa-envelope',
+                        'iconOptions' => [
+                            'class' => 'kt-label-font-color-2',
+                        ],
+                        'visible' => true,
+                    ],
                 ]
-            ]) ?>
-        <!-- begin:: Page -->
+            ]
+        ]
+    ]) ?>
 
-        <div class="kt-grid kt-grid--hor kt-grid--root">
-            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
-                <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
+    <!-- begin:: Page -->
 
+    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
+        <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
+            <div class="kt-container kt-container--fit  kt-container--fluid  kt-grid kt-grid--ver">
+
+                <?= $this->render('@kilyakus/web/views/elements/sidebars/_aside',['baseUrl' => $baseUrl, 'nav' => $nav]) ?>
+
+                <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
+
+                    <!-- begin:: Content -->
                     
-
-                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch">
-                        <div class="kt-body kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-grid--stretch" id="kt_body">
-                            <div class="kt-container kt-container--fit  kt-container--fluid  kt-grid kt-grid--ver">
-
-                                <?= $this->render('@kilyakus/web/views/elements/sidebars/_aside',['baseUrl' => $baseUrl, 'nav' => $nav]) ?>
-
-                                <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
-                                    <!-- begin:: Content -->
-                                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+                    <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
 
 
-                                        <?= $this->render('@kilyakus/web/views/_alert') ?>
-                                        
-                                        <?= $content ?>
+                        <?= $this->render('@kilyakus/web/views/_alert') ?>
+                        
+                        <?= $content ?>
 
-                                    </div>
-
-                                    <!-- end:: Content -->
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
-                    <?= $this->render('@kilyakus/web/views/elements/footer/_footer',['baseUrl' => $baseUrl]) ?>
+                    <!-- end:: Content -->
+
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- end:: Page -->
-        <!-- begin::Scrolltop -->
-        <div id="kt_scrolltop" class="kt-scrolltop">
-            <i class="fa fa-arrow-up"></i>
-        </div>
-        <!-- end::Scrolltop -->
+    <?= $this->render('@kilyakus/web/views/elements/footer/_footer',['baseUrl' => $baseUrl]) ?>
 
-        <?= $this->render('@kilyakus/web/views/elements/sidebars/_toolbar',['baseUrl' => $baseUrl, 'nav' => $nav]) ?>
-
-        <?php $this->endBody() ?>
-    </body>
-    <!-- end::Body -->
-</html>
-<?php $this->endPage() ?>
+<?php $this->endContent(); ?>

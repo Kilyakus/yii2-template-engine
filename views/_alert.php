@@ -4,10 +4,10 @@ use yii\widgets\Pjax;
 ?>
 
 <?php if(!$module->enableFlashMessages) : ?>
-    <div class="container">
+
         <?php foreach (Yii::$app->session->getAllFlashes() as $type => $message): ?>
             <?php if (in_array($type, ['success', 'danger', 'warning', 'info'])): ?>
-            	
+            	<?php $type = $type == 'danger' ? 'error' : $type; ?>
             	<?php $this->registerJs("
 toastr.options = {
   'closeButton': true,
@@ -29,5 +29,5 @@ toastr['".$type."']('".$message."')",yii\web\View::POS_READY); ?>
                  ?>
             <?php endif ?>
         <?php endforeach ?>
-    </div>
+
 <?php endif ?>
