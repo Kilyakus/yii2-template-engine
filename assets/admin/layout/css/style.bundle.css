@@ -1111,7 +1111,7 @@ a.close.disabled {pointer-events:none;}
 
 .tooltip-inner {max-width:200px;padding:0.75rem 1rem;color:#595d6e;text-align:center;background-color:#ffffff;border-radius:3px;}
 
-.popover {position:absolute;top:0;left:0;z-index:1060;display:block;max-width:276px;font-family:"Gotham";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:0.9rem;word-wrap:break-word;background-color:#fff;background-clip:padding-box;border:1px solid #ffffff;border-radius:3px;}
+/*.popover {position:absolute;top:0;left:0;z-index:1060;display:block;max-width:276px;font-family:"Gotham";font-style:normal;font-weight:400;line-height:1.5;text-align:left;text-align:start;text-decoration:none;text-shadow:none;text-transform:none;letter-spacing:normal;word-break:normal;word-spacing:normal;white-space:normal;line-break:auto;font-size:0.9rem;word-wrap:break-word;background-color:#fff;background-clip:padding-box;border:1px solid #ffffff;border-radius:3px;}
   .popover .arrow {position:absolute;display:block;width:1rem;height:0.5rem;margin:0 0.3rem;}
     .popover .arrow::before, .popover .arrow::after {position:absolute;display:block;content:"";border-color:transparent;border-style:solid;}
 
@@ -1139,7 +1139,7 @@ a.close.disabled {pointer-events:none;}
 .popover-header {padding:1rem 1.25rem;margin-bottom:0;font-size:1rem;color:#595d6e;background-color:#ffffff;border-bottom:1px solid #f2f2f2;border-top-left-radius:calc(0.3rem - 1px);border-top-right-radius:calc(0.3rem - 1px);}
   .popover-header:empty {display:none;}
 
-.popover-body {padding:1rem 1.25rem;color:#74788d;}
+.popover-body {padding:1rem 1.25rem;color:#74788d;}*/
 
 .carousel {position:relative;}
 
@@ -1742,10 +1742,8 @@ code {background-color:#f7f8fa;}
 .modal .modal-content {border-radius:4px;}
   .modal .modal-content .modal-header .modal-title {font-weight:500;font-size:1.3rem;color:#48465b;}
     .modal .modal-content .modal-header .modal-title small {font-weight:400;font-size:0.9rem;color:#74788d;}
-  .modal .modal-content .modal-header .close {outline:none !important;color:#74788d;font-family:"LineAwesome";text-decoration:inherit;text-rendering:optimizeLegibility;text-transform:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;transition:all 0.3s;}
-    .modal .modal-content .modal-header .close:before {content:"";}
-    .modal .modal-content .modal-header .close:hover {transition:all 0.3s;}
-    .modal .modal-content .modal-header .close:before {font-size:1.3rem;}
+  .modal .modal-content .modal-header .close {font-size:0;}
+    .modal .modal-content .modal-header .close:before {content:"";outline:none !important;color:#74788d;font-size:1.3rem;font-family:"LineAwesome";text-decoration:inherit;text-rendering:optimizeLegibility;text-transform:none;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;transition:all 0.3s;}
     .modal .modal-content .modal-header .close span {display:none;}
     .modal .modal-content .modal-header .close:hover {color:#2986FF;}
 
@@ -1776,8 +1774,8 @@ code {background-color:#f7f8fa;}
   .pagination.pagination--grid .page-item .page-link {background-color:transparent;border:0;font-weight:400;color:#928eaa;border-radius:5px;width:2.25rem;height:2.25rem;display:flex;justify-content:center;align-items:center;font-size:1.2rem;margin:0 0.1rem;transition:all 0.3s;}
   .pagination.pagination--grid .page-item.active .page-link, .pagination.pagination--grid .page-item:hover .page-link, .pagination.pagination--grid .page-item:focus .page-link {background-color:#2986FF;color:#ffffff;}
 
-.popover {box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.15);}
-  .popover .popover-header {font-size:1rem;font-weight:500;border-bottom:1px solid #ebedf2;}
+/*.popover {box-shadow:0px 0px 20px 0px rgba(0, 0, 0, 0.15);}
+  .popover .popover-header {font-size:1rem;font-weight:500;border-bottom:1px solid #ebedf2;}*/
 
 .progress {background-color:#ebedf2;}
   .progress .progress-bar {transition:all 0.5s ease;}
@@ -7297,57 +7295,6 @@ strong {font-weight:bold;}
 .noUi-target {border:1px solid #e2e5ec;background:#f7f8fa;box-shadow:none;}
   .noUi-target .noUi-connect {background:#2986FF;}
   .noUi-target .noUi-handle {border:1px solid #f7f8fa;box-shadow:0 3px 6px -3px rgba(0, 0, 0, 0.7);}
-
-.note-popover {display:none;}
-
-.note-editor {position:static;border-radius:4px;}
-  .note-editor .note-toolbar {position:static;}
-  .note-editor .modal .modal-header .close {position:absolute;right:25px;top:20px;font-size:0;}
-  .note-editor .panel-heading.note-toolbar {padding:5px 10px 10px 10px;border-top-left-radius:4px;border-top-right-radius:4px;}
-    .note-editor .panel-heading.note-toolbar .btn {outline:none !important;}
-    .note-editor .panel-heading.note-toolbar .dropdown-menu {min-width:185px;}
-    .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu {min-width:350px;padding:10px;}
-      .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu > li {display:table;table-layout:fixed;}
-        .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu > li > .btn-group {display:table-cell !important;}
-          .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu > li > .btn-group:first-child {  padding-right:10px;}
-          .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu > li > .btn-group .note-color-reset {  margin:5px 0 10px 0;}
-          .note-editor .panel-heading.note-toolbar .note-color .dropdown-menu > li > .btn-group .note-palette-title {  margin:5px 0;  text-align:left;  border:0;}
-  .note-editor .dropdown-toggle::after {display:none;}
-
-.note-editor.note-frame {border:1px solid #e2e5ec;}
-  .note-editor.note-frame .panel-heading.note-toolbar {background:#f7f8fa;}
-  .note-editor.note-frame .note-statusbar {background:#f7f8fa;}
-
-.note-editor .note-toolbar .note-btn-group .btn {background:white;border:1px solid #ebedf2;}
-  .note-editor .note-toolbar .note-btn-group .btn i {vertical-align:initial;line-height:initial;padding-right:0;color:#74788d;}
-  .note-editor .note-toolbar .note-btn-group .btn:hover, .note-editor .note-toolbar .note-btn-group .btn:focus, .note-editor .note-toolbar .note-btn-group .btn:active, .note-editor .note-toolbar .note-btn-group .btn.active {background:transparent;color:#595d6e;}
-
-.note-editable .table.table-bordered th, .note-editable .table.table-bordered td {border:1px solid #e2e5ec;}
-
-.is-valid .note-editor {border-color:#1dc9b7;}
-
-.is-invalid .note-editor {border-color:#fd397a;}
-
-.md-editor {border-radius:4px;border-bottom-left-radius:0;border-bottom-right-radius:0;outline:none !important;}
-  .md-editor .md-footer,
-  .md-editor .md-header {padding:10px 10px;}
-  .md-editor .md-header {border-top-left-radius:4px;border-top-right-radius:4px;}
-    .md-editor .md-header .btn-group {margin-right:10px;}
-      .md-editor .md-header .btn-group .btn {background:white;border:1px solid #ebedf2;color:#74788d;transition:all 0.3s;}
-        .md-editor .md-header .btn-group .btn:hover, .md-editor .md-header .btn-group .btn:focus, .md-editor .md-header .btn-group .btn:active, .md-editor .md-header .btn-group .btn.active {transition:all 0.3s;color:#595d6e;background:transparent;}
-  .md-editor .md-footer {border-bottom-left-radius:0;border-bottom-right-radius:0;}
-  .md-editor > textarea {padding:10px 10px;border-bottom-left-radius:0;border-bottom-right-radius:0;}
-
-.md-editor {border:1px solid #e2e5ec;}
-  .md-editor.active {border:1px solid #e2e5ec;box-shadow:none;}
-  .md-editor .md-footer,
-  .md-editor .md-header {background:#f7f8fa;}
-  .md-editor > textarea {background:#f7f8fa;}
-  .md-editor.active > textarea {background:#f7f8fa;}
-
-.is-valid .md-editor {border-color:#1dc9b7;}
-
-.is-invalid .md-editor {border-color:#fd397a;}
 
 .dropzone {border-radius:4px;padding:20px;text-align:center;cursor:pointer;}
   .dropzone .dropzone-msg-title {margin:0 0 5px 0;padding:0;font-weight:600;font-size:1.1rem;}
