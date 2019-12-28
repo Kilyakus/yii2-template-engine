@@ -6,9 +6,9 @@ use bin\admin\components\API;
 use kilyakus\imageprocessor\Preloader;
 use bin\admin\modules\page\api\Page;
 use bin\admin\modules\chat\api\Chat;
+use kilyakus\web\templates\Header\Header;
 
 use kilyakus\web\Engine;
-use kilyakus\web\helpers\Layout;
 
 $baseUrl = Engine::registerThemeAsset($this)->baseUrl;
 $moduleName = $this->context->module->id;
@@ -66,7 +66,7 @@ $this->beginPage();
 
 <?php $this->beginContent('@kilyakus/web/views/layouts/base.php'); ?>
 
-    <?= \kilyakus\web\templates\Header\Header::widget([
+    <?= Header::widget([
         'menu' => [
             'adminPanel' => true
         ],

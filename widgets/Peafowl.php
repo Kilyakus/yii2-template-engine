@@ -47,7 +47,9 @@ class Peafowl extends \yii\bootstrap\Widget
     public function run()
     {
         PeafowlAsset::register($this->getView());
-        return $this->renderItems();
+        if(!empty($this->items)){
+            return $this->renderItems();
+        }
     }
 
     public function renderItems()

@@ -35,11 +35,6 @@ use yii\helpers\Html;
  */
 class ButtonGroup extends \yii\bootstrap\ButtonGroup
 {
-    /**
-     * @var bool Indicates whether the button group appears vertically stacked.
-     */
-    public $stacked = false;
-
     public $vertical = false;
 
     /**
@@ -47,7 +42,7 @@ class ButtonGroup extends \yii\bootstrap\ButtonGroup
      */
     public function init()
     {
-        if ($this->stacked === true) {
+        if ($this->vertical === true) {
             Html::addCssClass($this->options, 'btn-group-vertical');
         } else {
             Html::addCssClass($this->options, 'btn-group');

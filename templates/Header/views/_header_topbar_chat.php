@@ -12,20 +12,4 @@ use yii\helpers\Html;
 	</div>
 </div>
 <!--end: Chat Counter -->
-
-<!--Begin:: Chat-->
-<div class="modal fade- modal-sticky-bottom-right" id="kt_chat_modal" role="dialog" data-backdrop="false">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <?= \bin\admin\modules\chat\widgets\chat\ChatPrivate::widget([
-                'path' => $chat['path'],
-                'id' => null,
-                'expand' => false,
-            ]) ?>
-      
-        </div>
-    </div>
-</div>
-
-<!--ENd:: Chat-->
 <?php endif; ?>

@@ -3,7 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 ?>
 
-<?= $this->render('_header_mobile',['baseUrl' => $baseUrl]) ?>
+<?= $this->render('_header_mobile',compact('topbar')) ?>
 
 <!-- begin:: Header -->
 <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed <?= isset($options['class']) ? $options['class'] : ''; ?>" data-ktheader-minimize="on">

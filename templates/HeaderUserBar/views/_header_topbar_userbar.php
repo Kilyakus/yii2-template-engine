@@ -6,10 +6,15 @@ use kilyakus\web\widgets as Widget;
 <!--begin: User bar -->
 <?php if(Yii::$app->user->isGuest) : ?>
 	<?= Widget\Button::widget([
-		'title' => Yii::t('easyii','Login'),
+		'icon' => 'la la-user',
 		'type' => 'transparent',
 		'size' => Widget\Button::SIZE_LARGE,
-		'options' => ['class' => 'ml-2', 'data-toggle' => 'modal', 'data-target' => '#loginForm'],
+		'circle' => true,
+		'options' => [
+			'class' => 'btn-icon border-0', 
+			'data-toggle' => 'modal', 
+			'data-target' => '#loginForm'
+		],
 	]) ?>
 <?php else: ?>
 	<div class="kt-header__topbar-item kt-header__topbar-item--user">

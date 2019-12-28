@@ -13,6 +13,5 @@ use kilyakus\web\widgets as Widget;
         <a href="<?= Url::toRoute(['/system/default/clear-assets']) ?>"><i class="fa fa-trash-alt"></i></a>
     </li>
 </ul>
-
 <!-- end::Sticky Toolbar -->
 <?php endif; ?>
