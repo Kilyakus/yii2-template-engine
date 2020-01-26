@@ -97,24 +97,6 @@ var KTApp = function() {
         });
     }
 
-    var initScroll = function() {
-        $('[data-scroll="true"]').each(function() {
-            var el = $(this);
-            KTUtil.scrollInit(this, {
-                mobileNativeScroll: true,
-                handleWindowResize: true,
-                rememberPosition: (el.data('remember-position') == 'true' ? true : false),
-                height: function() {
-                    if (KTUtil.isInResponsiveRange('tablet-and-mobile') && el.data('mobile-height')) {
-                        return el.data('mobile-height');
-                    } else {
-                        return el.data('height');
-                    }
-                }
-            });
-        });
-    }
-
     var initAlerts = function() {
         // init bootstrap popover
         $('body').on('click', '[data-close=alert]', function() {
@@ -187,7 +169,6 @@ var KTApp = function() {
         },
 
         initComponents: function() {
-            initScroll();
             initTooltips();
             initPopovers();
             initAlerts();
@@ -1798,7 +1779,7 @@ var KTUtil = function() {
                         } else {
                             KTUtil.css(element, 'overflow', 'auto');
                             if (height > 0) {
-                                KTUtil.css(element, 'height', height + 'px');
+                                KTUtil.css(element, 'height', height);
                             }
                         }
 
@@ -1806,38 +1787,19 @@ var KTUtil = function() {
                         ps = KTUtil.data(element).remove('ps');
                     } else if (height > 0){
                         KTUtil.css(element, 'overflow', 'auto');
-                        KTUtil.css(element, 'height', height + 'px');
+                        KTUtil.css(element, 'height', height);
                     }
 
                     return;
                 }
 
                 if (height > 0) {
-                    KTUtil.css(element, 'height', height + 'px');
+                    KTUtil.css(element, 'height', height);
                 }
 
                 if (options.desktopNativeScroll) {
                     KTUtil.css(element, 'overflow', 'auto');
                     return;
-                }
-                
-                // Init scroll
-                KTUtil.css(element, 'overflow', 'hidden');
-
-                if (ps = KTUtil.data(element).get('ps')) {
-                    ps.update();
-                } else {
-                    KTUtil.addClass(element, 'kt-scroll');
-                    ps = new PerfectScrollbar(element, {
-                        wheelSpeed: 0.5,
-                        swipeEasing: true,
-                        wheelPropagation: (options.windowScroll === false ? false : true),
-                        minScrollbarLength: 40,
-                        maxScrollbarLength: 300, 
-                        suppressScrollX: KTUtil.attr(element, 'data-scroll-x') != 'true' ? true : false
-                    });
-
-                    KTUtil.data(element).set('ps', ps);
                 }
 
                 // Remember scroll position in cookie
@@ -9606,7 +9568,7 @@ var KTLayout = function() {
 
                         // Hover class
                         KTUtil.addClass(body, 'kt-aside--minimize-hover');
-                        asideMenu.scrollUpdate();
+                        // asideMenu.scrollUpdate();
                         asideMenu.scrollTop();
                     }
                 }, 50);
@@ -9636,7 +9598,7 @@ var KTLayout = function() {
                         });
 
                         // Hover class
-                        asideMenu.scrollUpdate();
+                        // asideMenu.scrollUpdate();
                         asideMenu.scrollTop();
                     }
                 }, 100);
@@ -9659,12 +9621,17 @@ var KTLayout = function() {
                     var height;
 
                     if (KTUtil.isInResponsiveRange('desktop')) {
-                        height = parseInt(KTUtil.getViewPort().height) - parseInt(KTUtil.actualHeight('kt_header', false)) - parseInt(KTUtil.actualHeight('kt_footer', false));
+                        height = parseInt(KTUtil.getViewPort().height) - parseInt(KTUtil.actualHeight('kt_header', false)) - parseInt(KTUtil.actualHeight('kt_footer', false)); //;
                         height = height - parseInt(KTUtil.css(menu, 'marginTop')) - parseInt(KTUtil.css(menu, 'marginBottom'));
+
+                        console.log('getViewPort = ' + parseInt(KTUtil.getViewPort().height))
+                        console.log('header = ' + parseInt(KTUtil.actualHeight('kt_header', false)))
+                        console.log('footer = ' + parseInt(KTUtil.actualHeight('kt_footer', false)))
                     } else {
                         height = parseInt(KTUtil.getViewPort().height);
                     }
 
+                    $(menu).css({'height':height});
                     return height;
                 }
             };

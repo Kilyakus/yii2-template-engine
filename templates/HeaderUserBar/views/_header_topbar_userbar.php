@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use kilyakus\web\widgets as Widget;
+use kilyakus\widget\scrollbar\Scrollbar;
 ?>
 <!--begin: User bar -->
 <?php if(Yii::$app->user->isGuest) : ?>
@@ -19,7 +20,7 @@ use kilyakus\web\widgets as Widget;
 <?php else: ?>
 	<div class="kt-header__topbar-item kt-header__topbar-item--user">
 		<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,10px">
-			<img alt="<?= Yii::$app->user->identity->name ?>" src="<?= Yii::$app->user->identity->profile->getAvatar(300) ?>">
+			<img alt="<?= Yii::$app->user->identity->name ?>" src="<?= Yii::$app->user->identity->getAvatar(300) ?>">
 			<span class="kt-header__topbar-icon kt-bg-brand kt-font-lg kt-font-bold kt-font-light kt-hidden">S</span>
 			<span class="kt-header__topbar-icon kt-hidden"><i class="flaticon2-user-outline-symbol"></i></span>
 			<!-- <span class="kt-header__topbar-welcome kt-visible-desktop"><?= Yii::t('easyii','Welcome') ?>,</span> -->
@@ -31,7 +32,7 @@ use kilyakus\web\widgets as Widget;
 			<div class="kt-user-card kt-user-card--skin-light kt-notification-item-padding-x">
 				<div class="kt-user-card__avatar">
 
-					<img class="kt-hidden-" alt="<?= Yii::$app->user->identity->name ?>" src="<?= Yii::$app->user->identity->profile->getAvatar(300) ?>">
+					<img class="kt-hidden-" alt="<?= Yii::$app->user->identity->name ?>" src="<?= Yii::$app->user->identity->getAvatar(300) ?>">
 
 					<!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
 					<span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold kt-hidden">S</span>
@@ -49,7 +50,13 @@ use kilyakus\web\widgets as Widget;
 			<!--begin: Navigation -->
 				
 				<?php if(count($userbar['items'])) : ?>
-					<div class="kt-notification" data-scroll="true" style="max-height: 55vh; overflow: hidden;">
+					<?php Scrollbar::begin([
+						'maxHeight' => '55vh',
+						'options' => [
+							'class' => 'kt-notification',
+						]
+					]); ?>
+					<!-- <div class="kt-notification" data-scroll="true" style="max-height: 55vh; overflow: hidden;"> -->
 						<?php foreach ($userbar['items'] as $item) : ?>
 							<?php if($item['visible'] == true) : ?>
 								<a href="<?= $item['url'] ?>" class="kt-notification__item">
@@ -67,7 +74,8 @@ use kilyakus\web\widgets as Widget;
 								</a>
 							<?php endif; ?>
 						<?php endforeach; ?>
-					</div>
+					<!-- </div> -->
+					<?php Scrollbar::end(); ?>
 				<?php endif; ?>
 
 				<div class="kt-notification">

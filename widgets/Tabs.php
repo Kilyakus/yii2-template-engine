@@ -1,15 +1,11 @@
 <?php
-
-/**
- * @copyright Copyright (c) 2012 - 2015 SHENL.COM
- * @license http://www.shenl.com/license/
- */
-
 namespace kilyakus\web\widgets;
 
 use yii\base\InvalidConfigException;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
+use kilyakus\portlet\Portlet;
+use kilyakus\widget\dropdown\Dropdown;
 
 /**
  * Tabs renders a Tab Engine component.
@@ -59,31 +55,15 @@ class Tabs extends \yii\bootstrap\Tabs {
     const NAV_TYPE_TABS = 'nav-tabs';
     const NAV_TYPE_PILLS = 'nav-pills';
 
-    /**
-     * @var string, specifies the Bootstrap tab styling.
-     * Valid values 'nav-tabs',  'nav-pills'
-     */
+
     public $navType = self::NAV_TYPE_TABS;
 
-    /**
-     * @var string the placement of the tabs.
-     * Valid values are 'above', 'below', 'left' and 'right'.
-     */
     public $placement = self::PLACEMENT_ABOVE;
 
-    /**
-     * @var bool Indicates whether tabs is styled for Engine.
-     */
-    public $styled = true;
-
-    /**
-     * @var bool Indicates whether tabs is justified.
-     */
     public $justified = false;
 
-    /**
-     * Initializes the widget.
-     */
+    public $portlet = [];
+
     public function init()
     {
         if ($this->justified)
@@ -91,38 +71,34 @@ class Tabs extends \yii\bootstrap\Tabs {
             Html::addCssClass($this->options, 'nav-justified');
         }
 
+        if (!empty($this->portlet))
+        {
+            Portlet::begin($this->portlet);
+        }
+
         Html::addCssClass($this->options, 'nav ' . $this->navType);
         parent::init();
     }
 
-    /**
-     *  Renders the widget.
-     */
     public function run()
     {
         $classWrap = ['tabs-' . $this->placement];
-        if ($this->styled)
+
+        if ($this->justified)
         {
-            $classWrap[] = 'tabbable-custom';
-            if ($this->justified)
-            {
-                $classWrap[] = 'nav-justified';
-            }
+            $classWrap[] = 'nav-justified';
         }
-        else
-        {
-            $classWrap[] = 'tabbable';
-        }
+
         echo Html::beginTag('div', ['class' => implode(' ', $classWrap)]);
         echo parent::run();
         echo Html::endTag('div');
+
+        if (!empty($this->portlet))
+        {
+            Portlet::end();
+        }
     }
 
-    /**
-     * Renders tab items as specified on [[items]].
-     * @return string the rendering result.
-     * @throws InvalidConfigException.
-     */
     protected function renderItems()
     {
         $headers = [];
@@ -144,15 +120,13 @@ class Tabs extends \yii\bootstrap\Tabs {
 
             if (isset($item['items']))
             {
-                if ($this->styled)
-                {
-                    throw new InvalidConfigException("The 'styled' not support dropdown items. Please, set 'styled' to false.");
-                }
                 $label .= ' <b class="caret"></b>';
+
                 Html::addCssClass($headerOptions, 'dropdown');
 
-                if ($this->renderDropdown($item['items'], $panes))
+                if ($this->renderDropdown($n, $item['items'], $panes))
                 {
+                $label .= ' <b class="caret"></b>';
                     Html::addCssClass($headerOptions, 'active');
                 }
 
@@ -181,8 +155,20 @@ class Tabs extends \yii\bootstrap\Tabs {
             $headers[] = Html::tag('li', $header, $headerOptions);
         }
 
+        // $headers = [\kilyakus\nav\Nav::widget([
+        //     'id' => $this->id,
+        //     // 'navbar' => 'nav-tabs',
+        //     'position' => 'pull-right',
+        //     'items' => $this->items
+        // ])];
+
         $headers = Html::tag('ul', implode("\n", $headers), $this->options);
         $panes = Html::tag('div', implode("\n", $panes), ['class' => 'tab-content']);
+
+        if (!empty($this->portlet))
+        {
+            $headers = Html::beginTag('div', ['class' => 'kt-portlet__head']) . $headers . Html::endTag('div');
+        }
 
         return ($this->placement == self::PLACEMENT_BELOW) ? ($panes . "\n" . $headers) : ($headers . "\n" . $panes);
     }

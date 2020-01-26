@@ -55,11 +55,14 @@ class Peafowl extends \yii\bootstrap\Widget
     public function renderItems()
     {
         $items = [];
-        foreach ($this->items as $i => $item) {
-            if (isset($item['visible']) && !$item['visible']) {
-                continue;
+
+        if(!empty($this->items)){
+            foreach ($this->items as $i => $item) {
+                if (isset($item['visible']) && !$item['visible']) {
+                    continue;
+                }
+                $items[] = $this->renderItem($item);
             }
-            $items[] = $this->renderItem($item);
         }
 
         return Html::tag('div', implode("\n", $items), $this->options);

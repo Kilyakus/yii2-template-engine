@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use kilyakus\widget\scrollbar\Scrollbar;
 ?>
 <!-- begin:: Aside -->
 <button class="kt-aside-close " id="kt_aside_close_btn"><i class="la la-close"></i></button>
@@ -8,7 +9,15 @@ use yii\helpers\Html;
 
 	<!-- begin:: Aside Menu -->
 	<div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-		<div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1">
+		<?php Scrollbar::begin([
+			'height' => '100%',
+			'options' => [
+				'id' => 'kt_aside_menu',
+				'class' => 'kt-aside-menu',
+				'data-ktmenu-vertical' => '1',
+				'data-ktmenu-scroll' => '1',
+			]
+		]); ?>
 			<?= app\widgets\DropList\DropList::widget([
 				'theme' => 'black',
 				'data' => $nav,
@@ -18,7 +27,7 @@ use yii\helpers\Html;
 				'iconsLibrary' => 'fa fa',
 				'split' => 1,
 			]) ?>
-		</div>
+		<?php Scrollbar::end(); ?>
 	</div>
 
 	<!-- end:: Aside Menu -->

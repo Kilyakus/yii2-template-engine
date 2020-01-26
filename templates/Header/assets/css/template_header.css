@@ -874,7 +874,7 @@
     .kt-quick-search .kt-quick-search__form .kt-quick-search__close {cursor:pointer;display:none;transition:all 0.3s;}
       .kt-quick-search .kt-quick-search__form .kt-quick-search__close:hover {transition:all 0.3s;color:#2986FF;}
   .kt-quick-search .kt-quick-search__wrapper {display:none;margin:1.5rem;}
-    .kt-quick-search .kt-quick-search__wrapper.ps {margin-right:0.5rem;}
+    .kt-quick-search .kt-quick-search__wrapper.ps {margin:0;}
   .kt-quick-search .kt-quick-search__result {padding:0;margin:0;}
     .kt-quick-search .kt-quick-search__result .kt-quick-search__category {display:flex;padding:0;margin:1.5rem 0 0.5rem 0;font-weight:600;font-size:1rem;text-transform:uppercase;color:#2986FF;}
       .kt-quick-search .kt-quick-search__result .kt-quick-search__category.kt-quick-search__category--first {margin-top:0;}
