@@ -19,7 +19,7 @@ use kilyakus\widget\scrollbar\Scrollbar;
 	]) ?>
 <?php else: ?>
 	<div class="kt-header__topbar-item kt-header__topbar-item--user">
-		<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,10px">
+		<div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,10px" aria-expanded="false">
 			<img alt="<?= Yii::$app->user->identity->name ?>" src="<?= Yii::$app->user->identity->getAvatar(300) ?>">
 			<span class="kt-header__topbar-icon kt-bg-brand kt-font-lg kt-font-bold kt-font-light kt-hidden">S</span>
 			<span class="kt-header__topbar-icon kt-hidden"><i class="flaticon2-user-outline-symbol"></i></span>

@@ -133,7 +133,7 @@ class Tabs extends \yii\bootstrap\Tabs {
                 $header = Html::a($label, "#", ['class' => 'dropdown-toggle', 'data-toggle' => 'dropdown']) . "\n"
                         . Dropdown::widget(['items' => $item['items'], 'clientOptions' => false]);
             }
-            elseif (isset($item['content']))
+            elseif (isset($item['content']) && !isset($item['url']))
             {
                 $options = array_merge($this->itemOptions, ArrayHelper::getValue($item, 'options', []));
                 $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . '-tab' . $n);
@@ -145,6 +145,20 @@ class Tabs extends \yii\bootstrap\Tabs {
                     Html::addCssClass($headerOptions, 'active');
                 }
                 $header = Html::a($label, '#' . $options['id'], ['data-toggle' => 'tab']);
+                $panes[] = Html::tag('div', $item['content'], $options);
+            }
+            elseif (isset($item['url']))
+            {
+                $options = array_merge($this->itemOptions, ArrayHelper::getValue($item, 'options', []));
+                // $options['id'] = ArrayHelper::getValue($options, 'id', $this->options['id'] . '-tab' . $n);
+
+                Html::addCssClass($options, 'tab-pane');
+                if (ArrayHelper::remove($item, 'active'))
+                {
+                    Html::addCssClass($options, 'active');
+                    Html::addCssClass($headerOptions, 'active');
+                }
+                $header = Html::a($label, $item['url']);
                 $panes[] = Html::tag('div', $item['content'], $options);
             }
             else
